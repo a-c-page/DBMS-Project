@@ -1,346 +1,252 @@
-/* --------------- RESET BEGINS --------------- */
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-
-/* --------------- RESET ENDS --------------- */
-
-.tabs {
-  width: 900px;
-  background: DodgerBlue;
-  margin: auto;
-  height: 60px;
-  margin-top: 50px;
-  overflow: hidden;
-}
-
-.tabs button {
-  width: 450px;
-  height: inherit;
-  font-size: 1.1em;
-}
-
-button {
-  text-align: center;
-	font-family: 'Dosis', sans-serif;
-	border: 0;
-}
-
-button:focus {
-	outline: 0;
-}
-
-#left-tab {
-  float: left;
-}
-
-#right-tab {
-  float: right;
-}
-
-.active {
-  border-top: 3px solid SteelBlue;
-}
-
-.content {
-  width: 900px;
-  margin: auto;
-  background: SlateGrey;
-  height: auto;
-  text-align: center;
-  font-family: 'Dosis', sans-serif;
-  font-size: 1.1em;
-	margin-bottom: 50px;
-}
-
-.content h1 {
-  padding: 40px;
-  font-family: 'Baloo Chettan', cursive;
-  font-size: 3em;
-  font-weight: bold;
-	color: SkyBlue;
-	text-shadow:
-			 3px 3px 0 #000,
-		 -1px -1px 0 #000,
-			1px -1px 0 #000,
-			-1px 1px 0 #000,
-			 1px 1px 0 #000;
-}
-
-input {
-  width: 95%;
-  margin: 25px;
-  font-family: 'Dosis', sans-serif;
-  font-size: 1.1em;
-}
-
-.hidden {
-	display: none;
-}
-
-#submit {
-  width: 95%;
-  height: 40px;
-  font-size: 1.2em;
-  font-weight: bold;
-  background: SkyBlue;
-	margin-bottom: 30px;
-}
-
-#role-div {
-	width: 95%;
-	height: 80px;
-	margin: auto;
-}
-
-#role-div input {
-	text-align: center;
-	width: auto;
-}
-
 /* HOME PAGE */
-#header {
-	width: 100%;
-	height: 250px;
-	background: SlateGrey;
-	border-bottom: 5px solid SteelBlue;
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
 }
 
-#title {
-	width: 800px;
-	height: 200px;
-	margin: auto;
-	position: relative;
-	top: 25px;
-	text-align: center;
+html{
+    font-family: 'Nunito', sans-serif;
+    font-size: 10px;
 }
 
-#title h1 {
-	font-family: 'Baloo Chettan', cursive;
-	position: relative;
-	font-size: 5em;
-	top: 60px;
-	text-align: center;
-	color: white;
-	text-shadow:
-       3px 3px 0 #000,
-     -1px -1px 0 #000,
-      1px -1px 0 #000,
-      -1px 1px 0 #000,
-       1px 1px 0 #000;
+a{
+    text-decoration: none;
 }
 
-#function-bar {
-	float: right;
-	border-bottom: 3px solid black;
-	width: 300px;
-	height: 40px;
-	position: relative;
-	top: -190px;
-	right: 10px;
+ul{
+    list-style: none;
 }
 
-#function-bar p {
-	position: relative;
-	top: 5px;
-	font-family: 'Dosis', sans-serif;
-	font-size: 1.45em;
-	text-align: center;
+p{
+    font-size: 1.6rem;
 }
 
-a:link {
-  text-decoration: none;
-	color: SkyBlue;
+img{
+    width: 100%;
+    max-width: 100%;
+    height: auto;
 }
 
-a:visited {
-	color: SkyBlue;
+section{
+    padding: 5rem 0;
 }
 
-.row-div {
-	width: 100%;
-	height: 200px;
-	margin: auto;
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center;
-	opacity: 80%;
-	transition: 0.2s;
+header{
+    width: 100%;
+    height: 5rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
 }
 
-.row-div:hover {
-	opacity: 100%;
+.container{
+    width: 100%;
+    max-width: 98rem;
+    margin: 0 auto;
+    padding: 0 1.5rem;
 }
 
-.row-div:hover h1 {
-	font-size: 3.5em;
+
+nav{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(255,255,255,.2);
 }
 
-.row-div h1 {
-	font-family: 'Baloo Chettan', cursive;
-	position: relative;
-	font-size: 3em;
-	top: 80px;
-	text-align: center;
-	color: SkyBlue;
-	text-shadow:
-			 3px 3px 0 #000,
-		 -1px -1px 0 #000,
-			1px -1px 0 #000,
-			-1px 1px 0 #000,
-			 1px 1px 0 #000;
-	transition: 0.2s;
-}
-/* Announcements PAGE */
-
-.announcement {
-	width: 100%;
-	height: auto;
-	border-bottom: 2px solid black;
-	overflow-wrap: break-word;
+.nav-brand{
+    width: 2rem;
 }
 
-#write textarea {
-	font-family: 'Dosis', sans-serif;
-	font-size: 1.1em;
-	margin: 15px;
-	resize: none;
+.menu-icons i{
+    font-size: 3.5rem;
+    color: #fafafa;
+    cursor: pointer;
 }
 
-#a-info {
-	text-align: left;
-	padding: 10px;
-	font-weight: bold;
+.close i{
+    color: #eb648c;
 }
 
-#a-content {
-	padding: 20px;
-	font-size: 1.1em;
-	padding-bottom: 35px;
+.nav-list{
+    width: 25rem;
+    height: 100vh;
+    background-color: #d7d4ed;
+    position: fixed;
+    top: 0;
+    right: -26rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1500;
+    transition: all 650ms ease-in-out;
 }
 
-/* LECTURES PAGE */
-
-.media {
-	width: 100%;
-	height: 60px;
-	border-bottom: 2px solid black;
+.nav-list.active{
+    right: 0;
 }
 
-.media a {
-	position: relative;
-	top: 2px;
+
+.close{
+    position: absolute;
+    top: 1rem;
+    left: 1.5rem;
 }
 
-.media img {
-	position: relative;
-	top: 10px;
+.nav-link{
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 7);
 }
 
-/* NOTES SHARING */
-
-.note-tabs {
-  width: 900px;
-  background: DodgerBlue;
-  margin: auto;
-  height: 60px;
-  margin-top: 50px;
-  overflow: hidden;
+.firstsection{
+    width: 100%;
+    height: 80vh;
+    background: url("images/newheader4.jpg") center no-repeat;
+    background-size: cover;
+    position: relative;
 }
 
-.note-tabs button {
-  width: 300px;
-  height: inherit;
-  font-size: 1.1em;
+.firstsection::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 4.7rem;
+    background: url("images/wave-large.png") center no-repeat;
+    background-size: cover;
 }
 
-.media span {
-	padding-left: 50px;
+.companyname{
+    width: 100%;
+    max-width: 100%;
+    color: #fafafa;
+    text-transform: uppercase;
+    transform: translateY(20%);
 }
 
-.media span img {
-	padding: 5px;
+.companyname h3{
+    font-size: 6rem;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
 }
 
-/* MARKS */
-
-#select-user {
-	height: auto;
-	width: 900px;
-	margin: auto;
-	background: SlateGrey;
-	border-bottom: 2px solid black;
+.companyname p{
+    font-size: 3rem ;
+    text-transform: uppercase;
+    text-align: center;
 }
 
-#select-user select {
-	width: 95%;
-	font-family: 'Dosis', sans-serif;
-	font-size: 1.1em;
-	height: 40px;
+.btn{
+    background-color: #eb648c;
+    border-radius: 2rem;
+    color: #fafafa;
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 1rem 2.5rem;
+    text-transform: uppercase;
+    transition: background-color 650ms;
 }
 
-#select-user p {
-	padding: 10px;
-	font-size: 1.1em;
+.btn:hover{
+    background-color: #ce587b;
 }
 
-.marks {
-	width: 100%;
-	height: 60px;
-	border-bottom: 2px solid black;
-	font-size: 1.1em;
+
+
+.companyinfo{
+    padding: 0;
 }
 
-.marks p {
-	position: relative;
-	top: 20px;
+.mainheading{
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 10rem;
+    color: rgba(0, 0, 0, 7);
 }
 
-#write select {
-	margin-top: 20px;
-	width: 95%;
-	font-family: 'Dosis', sans-serif;
-	font-size: 1.1em;
-	height: 40px;
+.mainheading h3{
+    font-size: 4rem;
 }
+
+.mainheading h1{
+    font-family: 'Aldrich', sans-serif;
+    font-size: 3rem;
+    margin: .5rem 0 1rem;
+}
+
+.activities-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    grid-gap: 10rem;
+}
+
+.activities-grid-item{
+    height: 50rem;
+    padding: 2rem;
+    width: 30rem;
+    color: #fafafa;
+    position: relative;
+    display: flex;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 1;
+    text-align: center;
+}
+
+.activities-grid-item::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+
+}
+
+.firstheading{
+    background: url("images/firstheading.jpg") center no-repeat;
+    
+}
+
+.secondheading{
+    background: url("images/secondheading.jpg") center no-repeat;
+}
+
+.thirdheading{
+    background: url("images/heading1.jpeg") center no-repeat;
+}
+
+.fourthheading{
+    background: url("images/headerimage3.jpg") center no-repeat;
+    
+}
+
+.fifthheading{
+    background: url("images/sixthheading.jpg") center no-repeat;
+}
+
+.sixthheading{
+    background: url("images/fifthheading.jpg") center no-repeat;
+}
+
+
+.activities-grid-item h1{
+    font-family: 'Aldrich', sans-serif;
+    font-size: 1.7rem;
+    text-transform: uppercase;
+    margin: 2rem 0;
+    font-weight: 900;
+}
+
