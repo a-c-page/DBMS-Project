@@ -100,9 +100,6 @@
                     <p>
                         Guaranteed Luxury and Comfort
                     </p>
-                    <div class="cta">
-                        <a href="#" class="btn"> Why wait? Book Now! </a>
-                    </div>
                 </div>
             </div>
 

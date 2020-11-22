@@ -62,27 +62,23 @@ nav{
    align-items: center;
    justify-content: space-between;
    padding: 1rem 0;
-   border-bottom: 1px solid rgba(255,255,255,.2);
-}
-
-.nav-brand{
-   width: 2rem;
+   border-bottom: 5px solid #fafafa;
 }
 
 .menu-icons i{
-   font-size: 3.5rem;
+   font-size: 5rem;
    color: #fafafa;
    cursor: pointer;
 }
 
 .close i{
-   color: #eb648c;
+   color: #fafafa;
 }
 
 .nav-list{
    width: 25rem;
    height: 100vh;
-   background-color: #d7d4ed;
+   background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
    position: fixed;
    top: 0;
    right: -26rem;
@@ -108,7 +104,7 @@ nav{
 .nav-link{
    font-size: 1.6rem;
    text-transform: uppercase;
-   color: rgba(0, 0, 0, 7);
+   color: #fafafa
 }
 
 .firstsection{
@@ -136,6 +132,7 @@ nav{
    color: #fafafa;
    text-transform: uppercase;
    transform: translateY(20%);
+   margin-top: 30px;
 }
 
 .companyname h3{
@@ -151,7 +148,7 @@ nav{
 }
 
 .btn{
-   background-color: #eb648c;
+    background: linear-gradient(to right, #77A1D3 0%, #79CBCA  51%, #77A1D3  100%);
    border-radius: 2rem;
    color: #fafafa;
    display: inline-block;
