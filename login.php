@@ -33,7 +33,7 @@
                     </div>
 
                     <li class="nav-item">
-                        <a href="#" class="nav-link">Home</a>
+                        <a href="home.php" class="nav-link">Home</a>
                     <br>
                     </br>
                     <br>
