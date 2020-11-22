@@ -6,6 +6,7 @@ if (isset($_SESSION["message"])) {
 unset($_SESSION['message']);
 session_destroy();
 ?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
