@@ -385,7 +385,7 @@ CONTACT PAGE
    font-family: 'Nunito', sans-serif;
    text-align: center;
    text-transform: uppercase;
-   opacity: 50%;
+   opacity: 80%;
    font-weight: 900;
 
 }
@@ -450,7 +450,7 @@ textarea{
    box-sizing: border-box;
 }
 
-.contactbutton{
+.contactbtn{
    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
    width: 100px;
    border: none;

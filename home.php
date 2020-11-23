@@ -65,7 +65,7 @@ if (isset( $_SESSION['username']))
 								</li>
 
 								<li class="nav-item">
-									<a href="#" class="nav-link">Contact</a>
+									<a href="contact.php" class="nav-link">Contact</a>
 									<br></br>
 									<br></br>
 									<br></br>
