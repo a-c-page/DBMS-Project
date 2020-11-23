@@ -86,10 +86,10 @@ if (isset( $_SESSION['username']))
     
     
     <div class="inventory">
+        <div class="inventorybox">
 
 
-
-
+        </div>
     </div>
 
     <script type="text/javascript" src="script.js"></script>
