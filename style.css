@@ -1,6 +1,6 @@
-/* 
+/*
 
-HOME PAGE 
+HOME PAGE
 
 */
 
@@ -46,6 +46,10 @@ header{
    top: 0;
    left: 0;
    z-index: 1;
+}
+
+.profile {
+  width: 40px;
 }
 
 .container{
@@ -353,18 +357,21 @@ LOGIN PAGE
 #register{
     left: 450px;
 }
+<<<<<<< Updated upstream
 
 
 /*
-   
+
 CONTACT US PAGE
-        
+
 */
 
 .contactcontainer{
    width: 80%;
-   
+
 }
 
 
 
+=======
+>>>>>>> Stashed changes
