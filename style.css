@@ -357,21 +357,129 @@ LOGIN PAGE
 #register{
     left: 450px;
 }
-<<<<<<< Updated upstream
-
-
 /*
 
-CONTACT US PAGE
+CONTACT PAGE
 
 */
 
+.background{
+   height: 100%;
+   width: 100%;
+   background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(images/contact1.jpeg);
+   background-color: #999;
+   background-position: cover;
+   background-size: cover;
+   position: absolute;
+}
+
 .contactcontainer{
    width: 80%;
+   margin: 50px auto;
+}
+
+.contactbox{
+   background: #ffff;
+   display: flex;
+   font-size: 2rem;
+   font-family: 'Nunito', sans-serif;
+   text-align: center;
+   text-transform: uppercase;
+   opacity: 50%;
+   font-weight: 900;
 
 }
 
+.contact-left{
+   flex-basis: 60%;
+   padding: 40px;
+}
 
+.contact-right{
+   flex-basis: 40%;
+   padding: 40px;
+   background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3));
+   color: black;
+}
 
-=======
->>>>>>> Stashed changes
+.contactcontainer h1{
+   margin-top: 150px;
+   margin-bottom: 30px;
+   width: 100%;
+   max-width: 100%;
+   color: #fafafa;
+   text-transform: uppercase;
+   transform: translateY(20%);
+   font-size: 3rem;
+   font-family: 'Nunito', sans-serif;
+   text-align: center;
+}
+
+.contactcontainer p{
+   margin-bottom: 60px;
+   font-size: 1.85rem;
+   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+   text-align: center;
+   text-transform: uppercase;
+   color: white;
+}
+
+.input-row{
+   display: flex;
+   justify-content: space-between;
+   margin-bottom: 20px;
+}
+
+.input-row .input-groups{
+   flex-basis: 45%;
+}
+
+input{
+   width: 100%;
+   border: none;
+   border-bottom: 1px solid #ccc;
+   outline: none;
+   padding-bottom: 5px;
+}
+
+textarea{
+   width: 100%;
+   border: 1px solid #ccc;
+   outline: none;
+   padding: 10px;
+   box-sizing: border-box;
+}
+
+.contactbutton{
+   background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+   width: 100px;
+   border: none;
+   outline: none;
+   color: #fff;
+   height: 35px;
+   border-radius: 30px;
+   margin-top: 20px;
+   box-shadow: 0px 5px 15px 0px linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+
+}
+
+.contact-left h3{
+   color: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+   font-weight: 600;
+   margin-bottom: 30px;
+   text-align: center;
+}
+
+.contact-right h3{
+   font-weight: 600;
+   margin-bottom: 30px;
+   text-align: center;
+}
+
+tr td:first-child{
+   padding-right: 20px;
+}
+
+tr td{
+   padding-top: 20px;
+}
