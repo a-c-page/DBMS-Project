@@ -1,3 +1,13 @@
+<?php
+session_start();
+if (isset($_SESSION["message"]))
+{
+  echo "<script type='text/javascript'> alert("."'".$_SESSION["message"]."'"."); </script>";
+}
+unset($_SESSION['message']);
+session_destroy();
+?>
+
 <!DOCTYPE html>
 <head>
     <title>
@@ -97,32 +107,33 @@
                     <button class="toggle-btn" onclick="login()">Log In</button>
                     <button class="toggle-btn" onclick="register()">Register</button>
                 </div>
-                <form id="login" action="" class="input-group">
-                    <input type="text" class="input-field" placeholder="Username" required>
+
+                <form id="login" action="checkLogin.php" class="input-group" method="POST">
+                    <input type="text" name="username" class="input-field" placeholder="Username" required>
                     <br></br>
                     <br></br>
-                    <input type="password" class="input-field" placeholder="Password" required>
+                    <input type="password" name="password" class="input-field" placeholder="Password" required>
                     <br></br>
                     <br></br>
-                    <button type="submit" class="submit-btn">Log In</Inp></button>
+                    <button type="submit" name="submit" class="submit-btn">Log In</Inp></button>
                 </form>
 
                 <form id="register" action="checkRegistration.php" class="input-group" method="POST">
-                    <input type="text" class="input-field" placeholder="First Name" required pattern="[A-Za-z]+" title="First name can only contain letters.">
+                    <input type="text" name="first" class="input-field" placeholder="First Name" required pattern="[A-Za-z]+" title="First name can only contain letters.">
                     <br></br>
                     <br></br>
-                    <input type="text" class="input-field" placeholder="Last Name" required pattern="[A-Za-z]+" title="Last name can only contain letters.">
+                    <input type="text" name="last" class="input-field" placeholder="Last Name" required pattern="[A-Za-z]+" title="Last name can only contain letters.">
                     <br></br>
                     <br></br>
-                    <input type="text" class="input-field" placeholder="Username" required pattern="[A-Za-z0-9]{3,}" title="Username can only contain leters and numbers, and must be at least 3 characters long.">
+                    <input type="text" name="username" class="input-field" placeholder="Username" required pattern="[A-Za-z0-9]{3,}" title="Username can only contain leters and numbers, and must be at least 3 characters long.">
                     <br></br>
                     <br></br>
-                    <input type="email" class="input-field" placeholder="Email">
+                    <input type="email" name="email" class="input-field" placeholder="Email">
                     <br></br>
                     <br></br>
-                    <input type="password" class="input-field" placeholder="Password" required pattern="[A-Za-z0-9]{3,}" title="Password can only contain leters and numbers, and must be at least 3 characters long.">
+                    <input type="password" name="password" class="input-field" placeholder="Password" required pattern="[A-Za-z0-9]{3,}" title="Password can only contain leters and numbers, and must be at least 3 characters long.">
                     <br></br>
-                    <button type="submit" class="submit-btn">Register</Inp></button>
+                    <button type="submit" name="submit" class="submit-btn">Register</Inp></button>
                 </form>
 
             </div>
