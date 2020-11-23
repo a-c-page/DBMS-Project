@@ -448,6 +448,7 @@ textarea{
    outline: none;
    padding: 10px;
    box-sizing: border-box;
+   resize: none;
 }
 
 .contactbtn{
@@ -482,4 +483,23 @@ tr td:first-child{
 
 tr td{
    padding-top: 20px;
+}
+
+
+
+/*
+
+SHOWROOM.PHP
+
+
+*/
+
+.inventory{
+   height: 100%;
+   width: 100%;
+   background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(images/inventory.jpg);
+   background-color: #999;
+   background-position: cover;
+   background-size: cover;
+   position: absolute;
 }
