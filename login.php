@@ -26,76 +26,59 @@ session_destroy();
 
     <!-- Header which contains nav bar and image-->
     <header>
-
         <div class="container">
             <nav>
-                <div class="nav-brand">
-
-                </div>
-
-                <div class="menu-icons open">
+  <img src="images/profile.png" class="profile" onclick="profileIcon('<?php if (isset($username)) {echo $username;} else {echo "";} ?>')">
+                <div class="nav-brand"></div>
+                <div class="menu-icons open" onclick="sidebar()">
                     <i class="icon ion-md-menu"></i>
                 </div>
 
-                <ul class="nav-list">
-                    <div class="menu-icons close">
+                <ul class="nav-list" id="sidebar">
+
+                    <div class="menu-icons close" onclick="sidebar()">
                         <i class="icon ion-md-close"></i>
                     </div>
 
                     <li class="nav-item">
                         <a href="home.php" class="nav-link">Home</a>
-                    <br>
-                    </br>
-                    <br>
-                </br>
-                <br>
-            </br>
-
+                        <br></br>
+                        <br></br>
+                        <br></br>
                     </li>
+
                     <li class="nav-item">
                         <a href="#" class="nav-link">Our Showroom</a>
-                     <br>
-                    </br>
-                    <br>
-                </br>
-                <br>
-            </br>
-
+                        <br></br>
+                        <br></br>
+                        <br></br>
                     </li>
+
                     <li class="nav-item">
                         <a href="#" class="nav-link">Bookings</a>
-                    <br>
-                    </br>
-                    <br>
-                </br>
-                <br>
-            </br>
-
+                        <br></br>
+                        <br></br>
+                        <br></br>
                     </li>
+
                     <li class="nav-item">
                         <a href="#" class="nav-link">Contact</a>
-                    <br>
-                    </br>
-                    <br>
-                </br>
-                <br>
-            </br>
-
+                        <br></br>
+                        <br></br>
+                        <br></br>
                     </li>
+
                     <li class="nav-item">
-                        <a href="#" class="nav-link">LOG-IN & Register</a>
-                    <br>
-                    </br>
-                    <br>
-                </br>
-                <br>
-            </br>
-
+                        <a href="login.php" class="nav-link">Login / Register</a>
+                        <br></br>
+                        <br></br>
+                        <br></br>
                     </li>
+
                 </ul>
+
             </nav>
         </div>
-
     </header>
 
 

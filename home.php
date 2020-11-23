@@ -1,27 +1,45 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"><meta http-equiv="X-UA-Compatible" content="ie=edge"><title>Van Gogh Executive Travel </title>
-<!--Ion Icons-->
-<link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
-	<!--Google Fonts-->
-	<link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css?family=Aldrich&display=swap" rel="stylesheet">
-			<!-- linkig the css file "main.css" -->
-			<link rel="stylesheet" href="style.css">
-			</head>
+<?php
+
+session_start();
+if (isset($_SESSION["message"])) {
+  echo "<script type='text/javascript'> alert("."'".$_SESSION["message"]."'"."); </script>";
+}
+unset($_SESSION['message']);
+
+if (isset( $_SESSION['username']))
+{
+    $username = $_SESSION['username'];
+}
+
+?>
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="UTF-8" name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Van Gogh Executive Travel</title>
+    <!--Ion Icons-->
+    <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+    	<!--Google Fonts-->
+    	<link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+    		<link href="https://fonts.googleapis.com/css?family=Aldrich&display=swap" rel="stylesheet">
+    			<!-- linkig the css file "main.css" -->
+    			<link rel="stylesheet" href="style.css">
+    </head>
 			<body>
 				<!-- Header which contains nav bar and image-->
 				<header>
 					<div class="container">
 						<nav>
-              <img src="images/profile.png" class="profile">
+              <img src="images/profile.png" class="profile" onclick="profileIcon('<?php if (isset($username)) {echo $username;} else {echo "";} ?>')">
 							<div class="nav-brand"></div>
-							<div class="menu-icons open">
+							<div class="menu-icons open" onclick="sidebar()">
 								<i class="icon ion-md-menu"></i>
 							</div>
 
-							<ul class="nav-list">
+							<ul class="nav-list" id="sidebar">
 
-								<div class="menu-icons close">
+								<div class="menu-icons close" onclick="sidebar()">
 									<i class="icon ion-md-close"></i>
 								</div>
 
@@ -54,7 +72,7 @@
 								</li>
 
 								<li class="nav-item">
-									<a href="login.php" class="nav-link">Login/Register</a>
+									<a href="login.php" class="nav-link">Login / Register</a>
 									<br></br>
 									<br></br>
 									<br></br>
@@ -94,12 +112,7 @@
                     <div class="activities-grid-item firstheading">
                         <h1>Revolutionizing the Way You Travel Forever</h1>
                         <p>
-                            jmwejcwpcjwpcojwpcjwpcjk
-                            wpjvwjcwvpwcwcnmwpcmwpcj
-                            nw;pcnwcw pcmwc2pcmwcp
-                            wcmwcpwcpojdpo2jep2ojcmp
-                            wmd2[kdcjoccmalsmwecipoe
-                            jwdpwcm;mckq;pdkqd[odk
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ultricies ligula id aliquet pharetra. Etiam eu dictum mauris. Proin ut elit eget felis efficitur interdum sed sit amet nibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                         </p>
 									<br>
 										<br/>
@@ -107,28 +120,18 @@
 									<!--second-->
 									<div class="activities-grid-item secondheading">
 										<h1>Canada's Most Luxurious & Exclusive Fleet</h1>
-										<p>
-                            jmwejcwpcjwpcojwpcjwpcjk
-                            wpjvwjcwvpwcwcnmwpcmwpcj
-                            nw;pcnwcw pcmwc2pcmwcp
-                            wcmwcpwcpojdpo2jep2ojcmp
-                            wmd2[kdcjoccmalsmwecipoe
-                            jwdpwcm;mckq;pdkqd[odk
-                        </p>
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ultricies ligula id aliquet pharetra. Etiam eu dictum mauris. Proin ut elit eget felis efficitur interdum sed sit amet nibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                        </p>
 										<br>
 											<br/>
 										</div>
 										<!--third-->
 										<div class="activities-grid-item thirdheading">
 											<h1>Seamless, State of the Art Service</h1>
-											<p>
-                            jmwejcwpcjwpcojwpcjwpcjk
-                            wpjvwjcwvpwcwcnmwpcmwpcj
-                            nw;pcnwcw pcmwc2pcmwcp
-                            wcmwcpwcpojdpo2jep2ojcmp
-                            wmd2[kdcjoccmalsmwecipoe
-                            jwdpwcm;mckq;pdkqd[odk
-                        </p>
+                                            <p>
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ultricies ligula id aliquet pharetra. Etiam eu dictum mauris. Proin ut elit eget felis efficitur interdum sed sit amet nibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                            </p>
 											<br>
 												<br/>
 											</div>
@@ -172,4 +175,4 @@
 										</main>
 										<script type="text/javascript" src="script.js"></script>
 									</body>
-								</html>
+</html>

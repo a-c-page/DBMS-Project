@@ -1,18 +1,3 @@
-// Function to select the Elements
-
-const selectElement = (element) => document.querySelector(element);
-
-//Open the Menu on Click
-
-selectElement('.open').addEventListener('click', () => {
-    selectElement('.nav-list').classList.add('active');
-    });
-
-
-selectElement('.close').addEventListener('click', () => {
-        selectElement('.nav-list').classList.remove('active');
-        });
- 
 
 //LogIn Register Form Swap Function
 
@@ -30,4 +15,22 @@ function login(){
     x.style.left = "50px";
     y.style.left = "450px";
     z.style.left = "0px";
+}
+
+function profileIcon(username) {
+    if (username == "")
+    {
+        window.location.href = "login.php";
+    }
+}
+
+function sidebar() {
+    if (document.getElementById("sidebar").classList.contains('active'))
+    {
+        document.getElementById("sidebar").classList.remove('active')
+    }
+    else
+    {
+        document.getElementById("sidebar").classList.add('active')
+    }
 }
