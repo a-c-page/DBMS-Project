@@ -51,7 +51,7 @@ if (isset( $_SESSION['username']))
 								</li>
 
 								<li class="nav-item">
-									<a href="#" class="nav-link">Our Showroom</a>
+									<a href="showroom.php" class="nav-link">Showroom</a>
 									<br></br>
 									<br></br>
 									<br></br>

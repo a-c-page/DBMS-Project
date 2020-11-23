@@ -11,6 +11,16 @@ if (isset( $_SESSION['username']))
     $username = $_SESSION['username'];
 }
 
+require "configure.php";
+
+$connection = mysqli_connect(DBHOST, DBUSER, DBPASS, DBNAME);
+
+if ( !$connection )
+{
+  $_SESSION["message"] = "Connection failed!";
+  header("location: login.php");
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -27,7 +37,9 @@ if (isset( $_SESSION['username']))
         <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body style="background-image: url('images/inventory.jpg');
+background-repeat: no-repeat;
+background-attachment: fixed;">
 <header>
         <div class="container">
             <nav>
@@ -83,14 +95,25 @@ if (isset( $_SESSION['username']))
             </nav>
         </div>
     </header>
-    
-    
-    <div class="inventory">
-        <div class="inventorybox">
 
+
+        <div class="tahaisabot">
 
         </div>
-    </div>
+        <div class="inventorybox">
+            <?php
+
+            $sql = "SELECT * FROM vehicle";
+
+            $query = mysqli_query($connection, $sql);
+
+            while ($row = $query->fetch_assoc())
+            {
+              echo "<div class='car-box'> <img src='images/inventory/". $row['photo']."' class='inventory-photo'></div>";
+            }
+
+            ?>
+        </div>
 
     <script type="text/javascript" src="script.js"></script>
 
