@@ -32,12 +32,6 @@ else
 
     $query = mysqli_query($connection, $sql);
 
-    if (!$query)
-    {
-      $_SESSION["message"] = "Query failed. Table may not exist. Try again.";
-      header("location: login.php");
-    }
-
     $rows_returned = mysqli_num_rows($query);
 
     if ($rows_returned == 1)
@@ -51,12 +45,6 @@ else
       $sql = "SELECT * FROM users WHERE email = '$email'";
 
       $query = mysqli_query($connection, $sql);
-
-      if (!$query)
-      {
-        $_SESSION["message"] = "Query failed. Table may not exist. Try again.";
-        header("location: login.php");
-      }
 
       $rows_returned = mysqli_num_rows($query);
 
