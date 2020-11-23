@@ -27,7 +27,6 @@ else
     $username = mysqli_real_escape_string($connection, $_POST['username']);
     $email = mysqli_real_escape_string($connection, $_POST['email']);
     $password = mysqli_real_escape_string($connection, $_POST['password']);
-    $role = mysqli_real_escape_string($connection, $_POST['role']);
 
     $sql = "SELECT * FROM users WHERE username = '$username'";
 
@@ -57,7 +56,7 @@ else
 
       else
       {
-        $sql = "INSERT INTO users (firstname, lastname, username, email, password, role) VALUES ('$first', '$last', '$username', '$email', '$password', '$role')";
+        $sql = "INSERT INTO users (firstname, lastname, username, email, password) VALUES ('$first', '$last', '$username', '$email', '$password')";
         mysqli_query($connection, $sql);
         $_SESSION["message"] = "User registered!";
         header("location: login.php");
