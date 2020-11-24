@@ -37,7 +37,9 @@ if ( !$connection )
         <link rel="stylesheet" href="style.css">
 </head>
 
-<body style="background-image: url('images/inventory.jpg');
+
+<body style="background-image: url('images/inventory1.jpg');
+background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5))
 background-repeat: no-repeat;
 background-attachment: fixed;">
 <header>
@@ -97,7 +99,12 @@ background-attachment: fixed;">
     </header>
 
 
-        <div class="tahaisabot">
+        <div class="inventory">
+            <h1> “By the work one knows the workmen.” – Jean De La Fontaine </h1>
+            <br></br>
+            <h3> A motto Van Gogh Executive Travel thrives upon! By constantly updating our inventory 
+                 we make sure that our Customers are always satisfied wih their experience
+                 
 
         </div>
         <div class="inventorybox">
@@ -112,13 +119,18 @@ background-attachment: fixed;">
               echo "
               <div class='car-box'>
                     <img src='images/inventory/". $row['Photo']."' class='inventory-photo'>
-                    <p>".$row['Year']." ".$row['Make']." ".$row['Model']."</p>
-                    <p>Colour: ".$row['Colour']."</p>
-                    <p>Mileage: ".$row['Mileage']."km</p>
-                    <p>Price: $".$row['Price']."</p>
-                    <form id='' action='home.php' class='' method='POST'>
-                        <button type='submit' name='submit' class=''>Book Now</Inp></button>
-                    </form>
+
+                    <div class='inventory-text'>
+                        <h1>".$row['Year']." ".$row['Make']." ".$row['Model']."</h1>
+                        <p>Colour: ".$row['Colour']."</p>
+                        <p>Mileage: ".$row['Mileage']."km</p>
+                        <p>Price: $".$row['Price']."</p>
+                        <p>Status: ".$row['Status']."</p>
+                        <form id='' action='home.php' class='' method='POST'>
+                            <button type='submit' name='submit' class='inventory-btn'>Book Now</Inp></button>
+                        </form>
+                    </div>
+
               </div>";
             }
 

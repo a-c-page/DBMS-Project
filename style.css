@@ -494,21 +494,83 @@ SHOWROOM.PHP
 
 */
 
+
 .inventorybox {
     width: 1000px;
     margin: auto;
-    margin-top: 200px;
+    margin-top: 100px;
     margin-bottom: 200px;
+    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
 }
 
 .car-box {
     outline: 2px solid black;
     padding: 10px;
     margin-top: 30px;
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.8);
 }
 
 .inventory-photo {
     width: 500px;
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3));
+
+}
+
+.inventory-text p{
+   font-size: 20px;
+   margin-bottom: 15px;
+   margin-left: 125px;
+}
+
+
+.inventory-text{
+   float: right;
+   margin: 10px 50px 0 0;
+   color: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+   font-family: 'Nunito', sans-serif;
+
+}
+
+.inventory-text h1{
+   font-size: 30px;;
+   margin-bottom: 20px;
+   font-family: 'Aldrich', sans-serif;
+   width: 400px;
+   text-align: center;
+}
+
+.inventory-btn{
+      background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+      width: 100px;
+      border: none;
+      outline: none;
+      color: #fff;
+      height: 35px;
+      border-radius: 30px;
+      box-shadow: 0px 5px 15px 0px linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+      margin-left: 150px;
+}
+
+.inventory h1{
+   margin-top: 150px;
+   margin-bottom: 30px;
+   width: 1000px;
+   color: #fafafa;
+   text-transform: uppercase;
+   transform: translateY(20%);
+   font-size: 3rem;
+   font-family: 'Nunito', sans-serif;
+   text-align: center;
+   margin-left: 375px;
+}
+
+.inventory h3{
+   font-size: 1.85rem;
+   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+   text-align: center;
+   text-transform: uppercase;
+   color: white;
+   width: 1000px;
+   margin-left: 375px;
+
 }
