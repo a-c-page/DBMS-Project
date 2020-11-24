@@ -38,3 +38,11 @@ function sidebar()
         document.getElementById("sidebar").classList.add('active')
     }
 }
+
+function bookNow(a, b, c) {
+    localStorage.setItem("Year", a);
+    localStorage.setItem("Make", b);
+    localStorage.setItem("Model", c);
+
+    window.location.href = "booking.php";
+}

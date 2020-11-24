@@ -102,9 +102,9 @@ background-attachment: fixed;">
         <div class="inventory">
             <h1> “By the work one knows the workmen.” – Jean De La Fontaine </h1>
             <br></br>
-            <h3> A motto Van Gogh Executive Travel thrives upon! By constantly updating our inventory 
+            <h3> A motto Van Gogh Executive Travel thrives upon! By constantly updating our inventory
                  we make sure that our Customers are always satisfied wih their experience
-                 
+
 
         </div>
         <div class="inventorybox">
@@ -126,9 +126,7 @@ background-attachment: fixed;">
                         <p>Mileage: ".$row['Mileage']."km</p>
                         <p>Price: $".$row['Price']." per 24 Hours</p>
                         <p>Status: ".$row['Status']."</p>
-                        <form id='' action='home.php' class='' method='POST'>
-                            <button type='submit' name='submit' class='inventory-btn'>Book Now</Inp></button>
-                        </form>
+                        <button name='submit' class='inventory-btn' onclick=\"bookNow('".$row['Year']."','".$row['Make']."','".$row['Model']."')\">Book Now</button>
                     </div>
 
               </div>";
