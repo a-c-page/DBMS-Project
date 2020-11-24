@@ -551,6 +551,7 @@ SHOWROOM.PHP
       border-radius: 30px;
       box-shadow: 0px 5px 15px 0px linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
       margin-left: 150px;
+      cursor: pointer;
 }
 
 .inventory h1{
