@@ -66,7 +66,7 @@ nav{
    align-items: center;
    justify-content: space-between;
    padding: 1rem 0;
-   border-bottom: 5px solid #fafafa;
+   border-bottom: 4px solid #fafafa;
 }
 
 .menu-icons i{
@@ -106,7 +106,9 @@ nav{
 }
 
 .nav-link{
+    display: inline-block;
    font-size: 1.6rem;
+   margin-bottom: 50px;
    text-transform: uppercase;
    color: #fafafa
 }
