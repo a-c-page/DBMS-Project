@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.3
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Nov 24, 2020 at 05:27 AM
--- Server version: 10.4.14-MariaDB
--- PHP Version: 7.4.11
+-- Host: 127.0.0.1:3306
+-- Generation Time: Nov 24, 2020 at 06:08 AM
+-- Server version: 5.7.26
+-- PHP Version: 7.2.18
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -27,14 +28,16 @@ SET time_zone = "+00:00";
 -- Table structure for table `bookings`
 --
 
-CREATE TABLE `bookings` (
+DROP TABLE IF EXISTS `bookings`;
+CREATE TABLE IF NOT EXISTS `bookings` (
   `bookingID` int(11) NOT NULL,
   `customerID` int(11) NOT NULL,
   `VIN` varchar(45) NOT NULL,
   `startDate` varchar(45) NOT NULL,
   `endDate` varchar(45) NOT NULL,
   `Price` double NOT NULL,
-  `paymentType` varchar(45) NOT NULL
+  `paymentType` varchar(45) NOT NULL,
+  PRIMARY KEY (`bookingID`,`customerID`,`VIN`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COMMENT='	';
 
 --
@@ -56,10 +59,35 @@ INSERT INTO `bookings` (`bookingID`, `customerID`, `VIN`, `startDate`, `endDate`
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `contact`
+--
+
+DROP TABLE IF EXISTS `contact`;
+CREATE TABLE IF NOT EXISTS `contact` (
+  `id` int(255) NOT NULL AUTO_INCREMENT,
+  `firstname` varchar(255) NOT NULL,
+  `lastname` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `phone` varchar(255) NOT NULL,
+  `feedback` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `contact`
+--
+
+INSERT INTO `contact` (`id`, `firstname`, `lastname`, `email`, `phone`, `feedback`) VALUES
+(1, 'a', 'a', 'a@a.a', 'a', 'a');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `customer`
 --
 
-CREATE TABLE `customer` (
+DROP TABLE IF EXISTS `customer`;
+CREATE TABLE IF NOT EXISTS `customer` (
   `customerID` varchar(45) NOT NULL,
   `licenseNumber` varchar(45) NOT NULL,
   `firstName` varchar(45) NOT NULL,
@@ -68,7 +96,8 @@ CREATE TABLE `customer` (
   `Street` varchar(45) NOT NULL,
   `City` varchar(45) NOT NULL,
   `Postal` varchar(45) NOT NULL,
-  `Unit` int(11) NOT NULL
+  `Unit` int(11) NOT NULL,
+  PRIMARY KEY (`customerID`,`licenseNumber`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
@@ -93,7 +122,8 @@ INSERT INTO `customer` (`customerID`, `licenseNumber`, `firstName`, `lastName`, 
 -- Table structure for table `employee`
 --
 
-CREATE TABLE `employee` (
+DROP TABLE IF EXISTS `employee`;
+CREATE TABLE IF NOT EXISTS `employee` (
   `employeeID` int(11) NOT NULL,
   `SSN` int(11) NOT NULL,
   `firstName` varchar(45) NOT NULL,
@@ -102,7 +132,8 @@ CREATE TABLE `employee` (
   `Street` varchar(45) NOT NULL,
   `Unit` int(11) NOT NULL,
   `Postal` varchar(45) NOT NULL,
-  `Email` varchar(45) NOT NULL
+  `Email` varchar(45) NOT NULL,
+  PRIMARY KEY (`employeeID`,`SSN`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
@@ -127,14 +158,16 @@ INSERT INTO `employee` (`employeeID`, `SSN`, `firstName`, `lastName`, `City`, `S
 -- Table structure for table `users`
 --
 
-CREATE TABLE `users` (
-  `id` int(255) NOT NULL,
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` int(255) NOT NULL AUTO_INCREMENT,
   `firstname` varchar(255) NOT NULL,
   `lastname` varchar(255) NOT NULL,
   `username` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+  `password` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `users`
@@ -150,7 +183,8 @@ INSERT INTO `users` (`id`, `firstname`, `lastname`, `username`, `email`, `passwo
 -- Table structure for table `vehicle`
 --
 
-CREATE TABLE `vehicle` (
+DROP TABLE IF EXISTS `vehicle`;
+CREATE TABLE IF NOT EXISTS `vehicle` (
   `VIN` varchar(45) NOT NULL,
   `plateNumber` varchar(45) NOT NULL,
   `Colour` varchar(45) NOT NULL,
@@ -160,7 +194,8 @@ CREATE TABLE `vehicle` (
   `Mileage` int(11) NOT NULL,
   `Status` varchar(45) NOT NULL,
   `Photo` varchar(255) NOT NULL,
-  `Price` decimal(65,0) NOT NULL
+  `Price` decimal(65,0) NOT NULL,
+  PRIMARY KEY (`VIN`,`plateNumber`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
@@ -179,50 +214,6 @@ INSERT INTO `vehicle` (`VIN`, `plateNumber`, `Colour`, `Year`, `Make`, `Model`, 
 ('IEE433JFJDJEJ458922', 'QIWL920', 'Yellow', 2019, 'Lamborghini', 'Urus', 982, 'Available', 'yurus20.jpg', '250'),
 ('HSUW20DHJW348910', 'HWQL201', 'Black', 2018, 'Rolls Royce', 'Wraith', 3485, 'Unavailable', 'bwraith18.jpg', '350'),
 ('GHIWDXGHWEDGHJEDGH', 'JKDJKEDHJKED', 'Black', 1990, 'Honda', 'Civic', 999999, 'Unavailable', 'honda.jpg', '0');
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `bookings`
---
-ALTER TABLE `bookings`
-  ADD PRIMARY KEY (`bookingID`,`customerID`,`VIN`);
-
---
--- Indexes for table `customer`
---
-ALTER TABLE `customer`
-  ADD PRIMARY KEY (`customerID`,`licenseNumber`);
-
---
--- Indexes for table `employee`
---
-ALTER TABLE `employee`
-  ADD PRIMARY KEY (`employeeID`,`SSN`);
-
---
--- Indexes for table `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `vehicle`
---
-ALTER TABLE `vehicle`
-  ADD PRIMARY KEY (`VIN`,`plateNumber`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `users`
---
-ALTER TABLE `users`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

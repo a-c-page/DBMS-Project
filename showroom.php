@@ -24,24 +24,28 @@ if ( !$connection )
 ?>
 
 <!DOCTYPE html>
+<html lang="en" dir="ltr">
+<!-- HEAD -->
 <head>
-    <title>
-        Our Inventory
-    </title>
-        <!--Ion Icons-->
-        <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
-        <!--Google Fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Aldrich&display=swap" rel="stylesheet">
-         <!-- linkig the css file "main.css" -->
-        <link rel="stylesheet" href="style.css">
+    <title>Van Gogh Executive Travel | Showroom</title>
+    <!--Ion Icons-->
+    <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+    <!--Google Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Aldrich&display=swap" rel="stylesheet">
+    <!-- linkig the css and js file -->
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="script.js"></script>
 </head>
-
-
+<!-- BODY -->
 <body style="background-image: url('images/inventory1.jpg');
 background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5))
 background-repeat: no-repeat;
 background-attachment: fixed;">
+<<<<<<< HEAD
+=======
+    <!-- Header which contains nav bar and image-->
+>>>>>>> main
     <header>
         <div class="container">
             <nav>
@@ -85,14 +89,13 @@ background-attachment: fixed;">
             </nav>
         </div>
     </header>
-
-
         <div class="inventory">
-            <h1> “By the work one knows the workmen.” – Jean De La Fontaine </h1>
-            <br></br>
-            <h3> A motto Van Gogh Executive Travel thrives upon! By constantly updating our inventory
-                 we make sure that our Customers are always satisfied wih their experience
-
+            <div class="title-box">
+                <h1> “By the work one knows the workmen.” – Jean De La Fontaine </h1>
+                <br></br>
+                <h3> A motto Van Gogh Executive Travel thrives upon! By constantly updating our inventory
+                     we make sure that our Customers are always satisfied wih their experience
+            </div>
 
         </div>
         <div class="inventorybox">
