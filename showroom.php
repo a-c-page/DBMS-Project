@@ -124,7 +124,7 @@ background-attachment: fixed;">
                         <h1>".$row['Year']." ".$row['Make']." ".$row['Model']."</h1>
                         <p>Colour: ".$row['Colour']."</p>
                         <p>Mileage: ".$row['Mileage']."km</p>
-                        <p>Price: $".$row['Price']."</p>
+                        <p>Price: $".$row['Price']." per 24 Hours</p>
                         <p>Status: ".$row['Status']."</p>
                         <form id='' action='home.php' class='' method='POST'>
                             <button type='submit' name='submit' class='inventory-btn'>Book Now</Inp></button>
