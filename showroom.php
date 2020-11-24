@@ -109,7 +109,17 @@ background-attachment: fixed;">
 
             while ($row = $query->fetch_assoc())
             {
-              echo "<div class='car-box'> <img src='images/inventory/". $row['photo']."' class='inventory-photo'></div>";
+              echo "
+              <div class='car-box'>
+                    <img src='images/inventory/". $row['Photo']."' class='inventory-photo'>
+                    <p>".$row['Year']." ".$row['Make']." ".$row['Model']."</p>
+                    <p>Colour: ".$row['Colour']."</p>
+                    <p>Mileage: ".$row['Mileage']."km</p>
+                    <p>Price: $".$row['Price']."</p>
+                    <form id='' action='home.php' class='' method='POST'>
+                        <button type='submit' name='submit' class=''>Book Now</Inp></button>
+                    </form>
+              </div>";
             }
 
             ?>

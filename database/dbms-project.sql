@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Nov 23, 2020 at 02:12 AM
--- Server version: 5.7.31
--- PHP Version: 7.3.21
+-- Generation Time: Nov 24, 2020 at 01:57 AM
+-- Server version: 5.7.26
+-- PHP Version: 7.2.18
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -142,14 +143,15 @@ CREATE TABLE IF NOT EXISTS `users` (
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `firstname`, `lastname`, `username`, `email`, `password`) VALUES
-(1, 'test', 'test', 'test', 'test@test.test', 'test');
+(1, 'test', 'test', 'test', 'test@test.test', 'test'),
+(2, 'a', 'a', 'aaa', 'a@a.a', 'aaa');
 
 -- --------------------------------------------------------
 
@@ -167,6 +169,8 @@ CREATE TABLE IF NOT EXISTS `vehicle` (
   `Model` varchar(45) NOT NULL,
   `Mileage` int(11) NOT NULL,
   `Status` varchar(45) NOT NULL,
+  `Photo` varchar(255) NOT NULL,
+  `Price` decimal(65,0) NOT NULL,
   PRIMARY KEY (`VIN`,`plateNumber`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
@@ -174,17 +178,18 @@ CREATE TABLE IF NOT EXISTS `vehicle` (
 -- Dumping data for table `vehicle`
 --
 
-INSERT INTO `vehicle` (`VIN`, `plateNumber`, `Colour`, `Year`, `Make`, `Model`, `Mileage`, `Status`) VALUES
-('JTKDE3B73A0347847', 'ABCD001', 'Yellow', 2018, 'Lamborghini', 'Aventador', 777, 'Available'),
-('3FAHP0JA9CR100470', 'BCDE002', 'Blue', 2020, 'Bugatti', 'Chiron', 201, 'Unavailable'),
-('1GNFK16K5RJ334512', 'CDEF003', 'White', 2019, 'Tesla', 'Model X', 1900, 'Available'),
-('WBAVC53598FZ90864', 'DEFG004', 'Black', 2019, 'Lamborghini', 'Huracan Performante', 506, 'Available'),
-('WAUKH68D11A004771', 'EFGH005', 'Purple', 2010, 'Lamborghini', 'Murcielago', 2034, 'Unavailable'),
-('1FTFW1CF7DKD95982', 'FGHI006', 'Red', 2020, 'Ferrari', 'F8', 102, 'Unavailable'),
-('G3URU3ISIFHRI679232', 'HWWO467', 'Charcoal', 2019, 'Aston Martin', 'DBS', 1500, 'Available'),
-('HJ3JRFJE922JS892109', 'KAIC234', 'Black', 2020, 'Bentley', 'Bentyga', 450, 'Available'),
-('IEE433JFJDJEJ458922', 'QIWL920', 'Yellow', 2019, 'Lambhorgini', 'Urus', 982, 'Available'),
-('HSUW20DHJW348910', 'HWQL201', 'Black', 2018, 'Rolls Royce', 'Wraith', 3485, 'Unavailable');
+INSERT INTO `vehicle` (`VIN`, `plateNumber`, `Colour`, `Year`, `Make`, `Model`, `Mileage`, `Status`, `Photo`, `Price`) VALUES
+('JTKDE3B73A0347847', 'ABCD001', 'Yellow', 2018, 'Lamborghini', 'Aventador', 777, 'Available', 'yaventador18.jpg', '0'),
+('3FAHP0JA9CR100470', 'BCDE002', 'Blue', 2020, 'Bugatti', 'Chiron', 201, 'Unavailable', 'bchiron20.jpg', '0'),
+('1GNFK16K5RJ334512', 'CDEF003', 'White', 2019, 'Tesla', 'Model X', 1900, 'Available', 'wmodelx19.jpg', '0'),
+('WBAVC53598FZ90864', 'DEFG004', 'Black', 2019, 'Lamborghini', 'Huracan Performante', 506, 'Available', 'bhuracan19.jpg', '0'),
+('WAUKH68D11A004771', 'EFGH005', 'Purple', 2010, 'Lamborghini', 'Murcielago', 2034, 'Unavailable', 'pmurcielago10.jpg', '0'),
+('1FTFW1CF7DKD95982', 'FGHI006', 'Red', 2020, 'Ferrari', 'F8', 102, 'Unavailable', 'rf820.jpg', '0'),
+('G3URU3ISIFHRI679232', 'HWWO467', 'Charcoal', 2019, 'Aston Martin', 'DBS', 1500, 'Available', 'charcoaldb519.jpg', '0'),
+('HJ3JRFJE922JS892109', 'KAIC234', 'Black', 2020, 'Bentley', 'Bentyga', 450, 'Available', 'bbentayga20.jpg', '0'),
+('IEE433JFJDJEJ458922', 'QIWL920', 'Yellow', 2019, 'Lamborghini', 'Urus', 982, 'Available', 'yurus20.jpg', '0'),
+('HSUW20DHJW348910', 'HWQL201', 'Black', 2018, 'Rolls Royce', 'Wraith', 3485, 'Unavailable', 'bwraith18.jpg', '0'),
+('GHIWDXGHWEDGHJEDGH', 'JKDJKEDHJKED', 'Black', 1990, 'Honda', 'Civic', 999999, 'Unavailable', 'honda.jpg', '0');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
