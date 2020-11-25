@@ -42,10 +42,7 @@ if ( !$connection )
 background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5))
 background-repeat: no-repeat;
 background-attachment: fixed;">
-<<<<<<< HEAD
-=======
     <!-- Header which contains nav bar and image-->
->>>>>>> main
     <header>
         <div class="container">
             <nav>
@@ -117,7 +114,7 @@ background-attachment: fixed;">
                         <p>Mileage: ".$row['Mileage']."km</p>
                         <p>Price: $".$row['Price']." per 24 Hours</p>
                         <p>Status: ".$row['Status']."</p>
-                        <button name='submit' class='inventory-btn' onclick=\"bookNow('".$row['Year']."','".$row['Make']."','".$row['Model']."')\">Book Now</button>
+                        <button name='submit' class='inventory-btn' onclick=\"bookNow('".$row['Year']."','".$row['Make']."','".$row['Model']."','".$row['VIN']."','".$row['Price']."')\">Book Now</button>
                     </div>
 
               </div>";

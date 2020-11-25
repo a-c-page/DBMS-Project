@@ -2,6 +2,12 @@
 
 session_start();
 
+if ( !isset( $_SESSION['username']) )
+{
+    $_SESSION["message"] = "You must be logged in to make a reservation.";
+    header("location: login.php");
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -65,88 +71,61 @@ session_start();
             </nav>
         </div>
     </header>
+    <div class="bookingbackground">
 
-  <<!--  <section class="banner">
-        <h2> Reserve A Car Today!</h2>
-        <div class="card-container">
-            <div class="card-img">
-                image here 
-            </div>
-
-            <div class="card-content">
-                <h3> Booking </h3>
-                <form>
-                    <div class="form-row">
-                        <input type="text" placeholder="First Name" required pattern="[A-Za-z]+" title="First name can only contain letters.">                            
-                        <input type="text" placeholder="Last Name" required pattern="[A-Za-z]+" title="Last name can only contain letters.">             
-                        <input type="email" placeholder="Email">
-                        <input type="text" placeholder="Phone Number">
-                        <input type="date" placeholder="From - MM/DD/YYYY">
-                        <input type="date" placeholder="To - MM/DD/YYYY">
-                        <input type="text" placeholder="License Number">
-                        <input type="text" placeholder="Apartment/House Number">
-                        <input type="text" placeholder="Street">
-                        <input type="text" placeholder="City">
-                        <input type="text" placeholder="Postal Code">
-                    </div>
-                </form>
-            </div>
-        </div>
-
-        
-    </section>
--->
-
-<div class="bookingbackground">
-
-    <div class="bookingcontainer">
-        <h1>Make A Reservation!</h1>
+        <div class="bookingcontainer">
+            <h1>Make A Reservation!</h1>
             <div class="bookingbox">
 
-                    <div class="bookingboxtext">
-                        <form>
+                <div class="bookingboxtext">
+                    <form onchange="updateTotal()" action="send_booking.php" method="post">
+                        <h3>TAHA IS GAY!</h3>
+                        <div> <p>First Name</p> <input type="text" name="first_name" class="input-coloumn" readonly value=<?php echo "'".$_SESSION['first_name']."'"; ?>> </div>
+                        <div> <p>Last Name</p> <input type="text" name="last_name" class="input-coloumn" readonly value=<?php echo "'".$_SESSION['last_name']."'"; ?>> </div>
+                        <div> <p>Email</p> <input type="email" name="email" class="input-coloumn" readonly value=<?php echo "'".$_SESSION['email']."'"; ?>> </div>
 
-                            <input type="text"  maxlength = "10" class="input-coloumn" placeholder="Full Name" readonly="readonly">                           
+                        <script type="text/javascript">
+                        document.write('<div> <p>Car</p> <input type="text" name="car" class="input-coloumn" readonly value="' +
+                        localStorage.getItem("Year") + ' ' + localStorage.getItem("Make") + ' ' + localStorage.getItem("Model") + '"> </div>');
+                        </script>
 
-                            <input type="email" class="input-coloumn" placeholder="Email" readonly="readonly">
+                        <script type="text/javascript">
+                        document.write('<div> <p>VIN</p> <input type="text" name="vin" class="input-coloumn" readonly value="' + localStorage.getItem("VIN") + '"> </div>');
+                        </script>
 
-                            <input type="text" class="input-coloumn" placeholder="Car Registered" readonly="readonly">
+                        <script type="text/javascript">
+                        document.write('<div> <p>Price/24hrs</p> <input type="text" name="price" id="price-box" class="input-coloumn" readonly value="$' + localStorage.getItem("Price") + '"> </div>');
+                        </script>
 
-                            <input type="text" class="input-coloumn" placeholder="Car VIN Number" readonly="readonly">                            
+                        <div><p>Phone Number</p> <input type="text" name="phone_number" class="input-coloumn" readonly value=<?php echo "'".$_SESSION['phone_number']."'"; ?>> </div>
+                        <div><p>License Number</p> <input type="text" name="license_number" class="input-coloumn" readonly value=<?php echo "'".$_SESSION['license_number']."'"; ?>> </div>
+                        <div><p>Booking From</p> <input type="date" name="start_date" id="booking-from" class="input-coloumn" > </div>
+                        <div><p>Booking To</p> <input type="date" name="end_date" id="booking-to" class="input-coloumn" > </div>
+                        <div><p>Unit Number</p> <input type="text" name="unit" class="input-coloumn" value=<?php echo "'".$_SESSION['unit']."'"; ?>> </div>
+                        <div><p>Street</p> <input type="text" name="street" class="input-coloumn" value=<?php echo "'".$_SESSION['street']."'"; ?>> </div>
+                        <div><p>City</p> <input type="text" name="city" class="input-coloumn" value=<?php echo "'".$_SESSION['city']."'"; ?>> </div>
+                        <div><p>Postal Code</p> <input type="text" name="postal" class="input-coloumn" value=<?php echo "'".$_SESSION['postal']."'"; ?>> </div>
+                        <br>
+                        <hr>
+                        <br>
+                        <h3>TAHA IS GAY! #2</h3>
 
-                            <input type="text" class="input-coloumn" placeholder="Phone Number">
-
-                            <input type="text" class="input-coloumn" placeholder="License Number">
-
-                            <input type="date" class="input-coloumn" placeholder="From - MM/DD/YYYY">
-
-                            <input type="date" class="input-coloumn" placeholder="To - MM/DD/YYYY">
-
-                            <input type="text" class="input-coloumn" placeholder="House Number">
-
-                            <input type="text" class="input-coloumn" placeholder="Street">
-
-                            <input type="text" class="input-coloumn" placeholder="City">
-
-                            <input type="text" class="input-coloumn" placeholder="Postal Code">
-
-                            <button class="bookingbtn" type="submit">SUBMIT</button>
-
-                        </form>
-                    </div>
-
-                
+                        <div>
+                            <p>Payment Type</p>
+                            <select name="payment_type" id="cars">
+                                <option value="Mastercard">Mastercard</option>
+                                <option value="Visa">Visa</option>
+                            </select>
+                        </div>
+                        <div> <p>Card Number</p> <input type="text" name="card_number" class="input-coloumn" > </div>
+                        <div> <p>Expiration Date</p> <input type="date" name="expiration_date" class="input-coloumn" > </div>
+                        <div> <p>CVV</p> <input type="text" name="cvv" class="input-coloumn" > </div>
+                        <div> <p>Total</p> <input type="text" name="total" id='total-box' class="input-coloumn" value="$0" readonly> </div>
+                        <button class="bookingbtn" type="submit">SUBMIT</button>
+                    </form>
+                </div>
             </div>
+        </div>
     </div>
-
-</div>
-
-
-
-        <script type="text/javascript">
-            document.write(localStorage.getItem("Year"));
-            document.write(localStorage.getItem("Make"));
-            document.write(localStorage.getItem("Model"));
-        </script>
-    </body>
+</body>
 </html>

@@ -1,6 +1,3 @@
-
-//LogIn Register Form Swap Function
-
 var x = document.getElementById("login");
 var y = document.getElementById("register");
 var z = document.getElementById("btn");
@@ -25,6 +22,9 @@ function profileIcon(username)
     {
         window.location.href = "login.php";
     }
+    else {
+        window.location.href = "profile.php";
+    }
 }
 
 function sidebar()
@@ -39,10 +39,31 @@ function sidebar()
     }
 }
 
-function bookNow(a, b, c) {
-    localStorage.setItem("Year", a);
-    localStorage.setItem("Make", b);
-    localStorage.setItem("Model", c);
+function bookNow(Year, Make, Model, VIN, Price) {
+    localStorage.setItem("Year", Year);
+    localStorage.setItem("Make", Make);
+    localStorage.setItem("Model", Model);
+    localStorage.setItem("VIN", VIN);
+    localStorage.setItem("Price", Price);
 
     window.location.href = "booking.php";
+}
+
+function updateTotal() {
+    var s = document.getElementById("booking-from").value;
+    var e = document.getElementById("booking-to").value;
+    var t = document.getElementById("total-box");
+    var start = new Date(s);
+    var end = new Date(e);
+    var diff = ((end.getTime() - start.getTime()) / (1000*3600*24)) + 1;
+    var price = document.getElementById("price-box").value.replace('$','');
+    var total = price*diff;
+
+    if (s == "" || e == "") {
+        t.value = "$0";
+    }
+    else {
+        t.value = total;
+    }
+
 }

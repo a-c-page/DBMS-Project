@@ -68,7 +68,7 @@ session_destroy();
             </nav>
         </div>
     </header>
-    
+
         <div class="hero">
             <div class="formbox">
                 <div class="buttonbox">
@@ -84,25 +84,22 @@ session_destroy();
                     <input type="password" name="password" class="input-field" placeholder="Password" required>
                     <br></br>
                     <br></br>
-                    <button type="submit" name="submit" class="submit-btn">Log In</Inp></button>
+                    <button type="submit" name="submit" class="submit-btn">Log In</button>
                 </form>
 
                 <form id="register" action="checkRegistration.php" class="input-group" method="POST">
-                    <input type="text" name="first" class="input-field" placeholder="First Name" required pattern="[A-Za-z]+" title="First name can only contain letters.">
-                    <br></br>
-                    <br></br>
-                    <input type="text" name="last" class="input-field" placeholder="Last Name" required pattern="[A-Za-z]+" title="Last name can only contain letters.">
-                    <br></br>
-                    <br></br>
+                    <input type="text" name="first_name" class="input-field" placeholder="First Name" required pattern="[A-Za-z]+" title="First name can only contain letters.">
+                    <input type="text" name="last_name" class="input-field" placeholder="Last Name" required pattern="[A-Za-z]+" title="Last name can only contain letters.">
                     <input type="text" name="username" class="input-field" placeholder="Username" required pattern="[A-Za-z0-9]{3,}" title="Username can only contain leters and numbers, and must be at least 3 characters long.">
-                    <br></br>
-                    <br></br>
                     <input type="email" name="email" class="input-field" placeholder="Email">
-                    <br></br>
-                    <br></br>
+                    <input type="text" name="license_number" class="input-field" placeholder="License Number">
+                    <input type="text" name="phone_number" class="input-field" placeholder="Phone Number">
+                    <input type="text" name="unit" class="input-field" placeholder="Unit Number">
+                    <input type="text" name="street" class="input-field" placeholder="Street">
+                    <input type="text" name="city" class="input-field" placeholder="City">
+                    <input type="text" name="postal" class="input-field" placeholder="Postal Code">
                     <input type="password" name="password" class="input-field" placeholder="Password" required pattern="[A-Za-z0-9]{3,}" title="Password can only contain leters and numbers, and must be at least 3 characters long.">
-                    <br></br>
-                    <button type="submit" name="submit" class="submit-btn">Register</Inp></button>
+                    <button type="submit" name="submit" class="submit-btn">Register</button>
                 </form>
 
             </div>

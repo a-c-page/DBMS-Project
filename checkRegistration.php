@@ -22,13 +22,19 @@ else
 
   else
   {
-    $first = mysqli_real_escape_string($connection, $_POST['first']);
-    $last = mysqli_real_escape_string($connection, $_POST['last']);
+    $first_name = mysqli_real_escape_string($connection, $_POST['first_name']);
+    $last_name = mysqli_real_escape_string($connection, $_POST['last_name']);
     $username = mysqli_real_escape_string($connection, $_POST['username']);
     $email = mysqli_real_escape_string($connection, $_POST['email']);
+    $license_number = mysqli_real_escape_string($connection, $_POST['license_number']);
+    $phone_number = mysqli_real_escape_string($connection, $_POST['phone_number']);
+    $unit = mysqli_real_escape_string($connection, $_POST['unit']);
+    $street = mysqli_real_escape_string($connection, $_POST['street']);
+    $city = mysqli_real_escape_string($connection, $_POST['city']);
+    $postal = mysqli_real_escape_string($connection, $_POST['postal']);
     $password = mysqli_real_escape_string($connection, $_POST['password']);
 
-    $sql = "SELECT * FROM users WHERE username = '$username'";
+    $sql = "SELECT * FROM customers WHERE username = '$username'";
 
     $query = mysqli_query($connection, $sql);
 
@@ -42,7 +48,7 @@ else
 
     else
     {
-      $sql = "SELECT * FROM users WHERE email = '$email'";
+      $sql = "SELECT * FROM customers WHERE email = '$email'";
 
       $query = mysqli_query($connection, $sql);
 
@@ -56,7 +62,8 @@ else
 
       else
       {
-        $sql = "INSERT INTO users (firstname, lastname, username, email, password) VALUES ('$first', '$last', '$username', '$email', '$password')";
+        $sql = "INSERT INTO customer (license_number, first_name, last_name, email, street, city, postal, unit, phone_number, username, password)
+                VALUES ('$license_number', '$first_name', '$last_name', '$email', '$street', '$city', '$postal', '$unit', '$phone_number', '$username', '$password')";
         mysqli_query($connection, $sql);
         $_SESSION["message"] = "User registered!";
         header("location: login.php");

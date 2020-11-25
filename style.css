@@ -7,255 +7,255 @@ HOME PAGE
 *,
 *::before,
 *::after{
-   margin: 0;
-   padding: 0;
-   box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
 }
 
 html{
-   font-family: 'Nunito', sans-serif;
-   font-size: 10px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 10px;
 }
 
 a{
-   text-decoration: none;
+    text-decoration: none;
 }
 
 ul{
-   list-style: none;
+    list-style: none;
 }
 
 p{
-   font-size: 1.6rem;
+    font-size: 1.6rem;
 }
 
 img{
-   width: 100%;
-   max-width: 100%;
-   height: auto;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
 }
 
 section{
-   padding: 5rem 0;
+    padding: 5rem 0;
 }
 
 header{
-   width: 100%;
-   height: 5rem;
-   position: absolute;
-   top: 0;
-   left: 0;
-   z-index: 1;
+    width: 100%;
+    height: 5rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
 }
 
 .profile {
-  width: 40px;
+    width: 40px;
 }
 
 .container{
-   width: 100%;
-   max-width: 98rem;
-   margin: 0 auto;
-   padding: 0 1.5rem;
+    width: 100%;
+    max-width: 98rem;
+    margin: 0 auto;
+    padding: 0 1.5rem;
 }
 
 
 nav{
-   width: 100%;
-   display: flex;
-   align-items: center;
-   justify-content: space-between;
-   padding: 1rem 0;
-   border-bottom: 4px solid #fafafa;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0;
+    border-bottom: 4px solid #fafafa;
 }
 
 .menu-icons i{
-   font-size: 5rem;
-   color: #fafafa;
-   cursor: pointer;
+    font-size: 5rem;
+    color: #fafafa;
+    cursor: pointer;
 }
 
 .close i{
-   color: #fafafa;
+    color: #fafafa;
 }
 
 .nav-list{
-   width: 25rem;
-   height: 100vh;
-   background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
-   position: fixed;
-   top: 0;
-   right: -26rem;
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   justify-content: center;
-   z-index: 1500;
-   transition: all 650ms ease-in-out;
+    width: 25rem;
+    height: 100vh;
+    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    position: fixed;
+    top: 0;
+    right: -26rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1500;
+    transition: all 650ms ease-in-out;
 }
 
 .nav-list.active{
-   right: 0;
+    right: 0;
 }
 
 
 .close{
-   position: absolute;
-   top: 1rem;
-   left: 1.5rem;
+    position: absolute;
+    top: 1rem;
+    left: 1.5rem;
 }
 
 .nav-link{
     display: inline-block;
-   font-size: 1.6rem;
-   margin-bottom: 50px;
-   text-transform: uppercase;
-   color: #fafafa
+    font-size: 1.6rem;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    color: #fafafa
 }
 
 .firstsection{
-   width: 100%;
-   height: 90vh;
-   background: url("images/headerimage.jpg") center no-repeat;
-   background-size: cover;
-   position: relative;
+    width: 100%;
+    height: 90vh;
+    background: url("images/headerimage.jpg") center no-repeat;
+    background-size: cover;
+    position: relative;
 }
 
 .firstsection::before{
-   content: "";
-   position: absolute;
-   left: 0;
-   bottom: 0;
-   width: 100%;
-   height: 25rem;
-   background: url("images/wave-large.png") center no-repeat;
-   background-size: cover;
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 25rem;
+    background: url("images/wave-large.png") center no-repeat;
+    background-size: cover;
 }
 
 .companyname{
-   width: 100%;
-   max-width: 100%;
-   color: #fafafa;
-   text-transform: uppercase;
-   transform: translateY(20%);
-   margin-top: 30px;
+    width: 100%;
+    max-width: 100%;
+    color: #fafafa;
+    text-transform: uppercase;
+    transform: translateY(20%);
+    margin-top: 30px;
 }
 
 .companyname h3{
-   font-size: 6rem;
-   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-   text-align: center;
+    font-size: 6rem;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
 }
 
 .companyname p{
-   font-size: 3rem ;
-   text-transform: uppercase;
-   text-align: center;
+    font-size: 3rem ;
+    text-transform: uppercase;
+    text-align: center;
 }
 
 .btn{
     background: linear-gradient(to right, #77A1D3 0%, #79CBCA  51%, #77A1D3  100%);
-   border-radius: 2rem;
-   color: #fafafa;
-   display: inline-block;
-   margin-top: 2rem;
-   padding: 1rem 2.5rem;
-   text-transform: uppercase;
-   transition: background-color 650ms;
+    border-radius: 2rem;
+    color: #fafafa;
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 1rem 2.5rem;
+    text-transform: uppercase;
+    transition: background-color 650ms;
 }
 
 .btn:hover{
-   background-color: #ce587b;
+    background-color: #ce587b;
 }
 
 
 
 .companyinfo{
-   padding: 0;
+    padding: 0;
 }
 
 .mainheading{
-   text-align: center;
-   text-transform: uppercase;
-   margin-bottom: 10rem;
-   color: rgba(0, 0, 0, 7);
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 10rem;
+    color: rgba(0, 0, 0, 7);
 }
 
 .mainheading h3{
-   font-size: 4rem;
+    font-size: 4rem;
 }
 
 .mainheading h1{
-   font-family: 'Aldrich', sans-serif;
-   font-size: 3rem;
-   margin: .5rem 0 1rem;
+    font-family: 'Aldrich', sans-serif;
+    font-size: 3rem;
+    margin: .5rem 0 1rem;
 }
 
 .activities-grid{
-   display: grid;
-   grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-   grid-gap: 10rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    grid-gap: 10rem;
 }
 
 .activities-grid-item{
-   height: 50rem;
-   padding: 2rem;
-   width: 30rem;
-   color: #fafafa;
-   position: relative;
-   display: flex;
-   cursor: pointer;
-   flex-direction: column;
-   justify-content: center;
-   z-index: 1;
-   text-align: center;
+    height: 50rem;
+    padding: 2rem;
+    width: 30rem;
+    color: #fafafa;
+    position: relative;
+    display: flex;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 1;
+    text-align: center;
 }
 
 .activities-grid-item::before{
-   content: "";
-   position: absolute;
-   left: 0;
-   top: 0;
-   width: 100%;
-   height: 100%;
-   z-index: -1;
-   background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
 
 }
 
 .firstheading{
-   background: url("images/firstheading.jpg") center no-repeat;
+    background: url("images/firstheading.jpg") center no-repeat;
 
 }
 
 .secondheading{
-   background: url("images/secondheading.jpg") center no-repeat;
+    background: url("images/secondheading.jpg") center no-repeat;
 }
 
 .thirdheading{
-   background: url("images/heading1.jpeg") center no-repeat;
+    background: url("images/heading1.jpeg") center no-repeat;
 }
 
 .fourthheading{
-   background: url("images/headerimage3.jpg") center no-repeat;
+    background: url("images/headerimage3.jpg") center no-repeat;
 
 }
 
 .fifthheading{
-   background: url("images/sixthheading.jpg") center no-repeat;
+    background: url("images/sixthheading.jpg") center no-repeat;
 }
 
 .sixthheading{
-   background: url("images/fifthheading.jpg") center no-repeat;
+    background: url("images/fifthheading.jpg") center no-repeat;
 }
 
 
 .activities-grid-item h1{
-   font-family: 'Aldrich', sans-serif;
-   font-size: 1.7rem;
-   text-transform: uppercase;
-   margin: 2rem 0;
-   font-weight: 900;
+    font-family: 'Aldrich', sans-serif;
+    font-size: 1.7rem;
+    text-transform: uppercase;
+    margin: 2rem 0;
+    font-weight: 900;
 }
 
 
@@ -366,124 +366,124 @@ CONTACT PAGE
 */
 
 .background{
-   height: 100%;
-   width: 100%;
-   background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(images/contact1.jpeg);
-   background-color: #999;
-   background-position: cover;
-   background-size: cover;
-   position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(images/contact1.jpeg);
+    background-color: #999;
+    background-position: cover;
+    background-size: cover;
+    position: absolute;
 }
 
 .contactcontainer{
-   width: 80%;
-   margin: 50px auto;
+    width: 80%;
+    margin: 50px auto;
 }
 
 .contactbox{
-   background: #ffff;
-   display: flex;
-   font-size: 2rem;
-   font-family: 'Nunito', sans-serif;
-   text-align: center;
-   text-transform: uppercase;
-   opacity: 80%;
-   font-weight: 900;
+    background: #ffff;
+    display: flex;
+    font-size: 2rem;
+    font-family: 'Nunito', sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+    opacity: 80%;
+    font-weight: 900;
 }
 
 .contact-left{
-   flex-basis: 60%;
-   padding: 40px;
+    flex-basis: 60%;
+    padding: 40px;
 }
 
 .contact-right{
-   flex-basis: 40%;
-   padding: 40px;
-   background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3));
-   color: black;
+    flex-basis: 40%;
+    padding: 40px;
+    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3));
+    color: black;
 }
 
 .contactcontainer h1{
-   margin-top: 150px;
-   margin-bottom: 30px;
-   width: 100%;
-   max-width: 100%;
-   color: #fafafa;
-   text-transform: uppercase;
-   transform: translateY(20%);
-   font-size: 3rem;
-   font-family: 'Nunito', sans-serif;
-   text-align: center;
+    margin-top: 150px;
+    margin-bottom: 30px;
+    width: 100%;
+    max-width: 100%;
+    color: #fafafa;
+    text-transform: uppercase;
+    transform: translateY(20%);
+    font-size: 3rem;
+    font-family: 'Nunito', sans-serif;
+    text-align: center;
 }
 
 .contactcontainer p{
-   margin-bottom: 60px;
-   font-size: 1.85rem;
-   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-   text-align: center;
-   text-transform: uppercase;
-   color: white;
+    margin-bottom: 60px;
+    font-size: 1.85rem;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+    color: white;
 }
 
 .input-row{
-   display: flex;
-   justify-content: space-between;
-   margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
 }
 
 .input-row .input-groups{
-   flex-basis: 45%;
+    flex-basis: 45%;
 }
 
 input{
-   width: 100%;
-   border: none;
-   border-bottom: 1px solid #ccc;
-   outline: none;
-   padding-bottom: 5px;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    outline: none;
+    padding-bottom: 5px;
 }
 
 textarea{
-   width: 100%;
-   border: 1px solid #ccc;
-   outline: none;
-   padding: 10px;
-   box-sizing: border-box;
-   resize: none;
+    width: 100%;
+    border: 1px solid #ccc;
+    outline: none;
+    padding: 10px;
+    box-sizing: border-box;
+    resize: none;
 }
 
 .contactbtn{
-   background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
-   width: 100px;
-   border: none;
-   outline: none;
-   color: #fff;
-   height: 35px;
-   border-radius: 30px;
-   margin-top: 20px;
-   box-shadow: 0px 5px 15px 0px linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    width: 100px;
+    border: none;
+    outline: none;
+    color: #fff;
+    height: 35px;
+    border-radius: 30px;
+    margin-top: 20px;
+    box-shadow: 0px 5px 15px 0px linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
 
 }
 
 .contact-left h3{
-   color: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
-   font-weight: 600;
-   margin-bottom: 30px;
-   text-align: center;
+    color: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    font-weight: 600;
+    margin-bottom: 30px;
+    text-align: center;
 }
 
 .contact-right h3{
-   font-weight: 600;
-   margin-bottom: 30px;
-   text-align: center;
+    font-weight: 600;
+    margin-bottom: 30px;
+    text-align: center;
 }
 
 tr td:first-child{
-   padding-right: 20px;
+    padding-right: 20px;
 }
 
 tr td{
-   padding-top: 20px;
+    padding-top: 20px;
 }
 
 
@@ -518,58 +518,58 @@ SHOWROOM.PHP
 }
 
 .inventory-text p{
-   font-size: 20px;
-   margin-bottom: 15px;
-   margin-left: 125px;
+    font-size: 20px;
+    margin-bottom: 15px;
+    margin-left: 125px;
 }
 
 
 .inventory-text{
-   float: right;
-   margin: 10px 50px 0 0;
-   color: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
-   font-family: 'Nunito', sans-serif;
+    float: right;
+    margin: 10px 50px 0 0;
+    color: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    font-family: 'Nunito', sans-serif;
 
 }
 
 .inventory-text h1{
-   font-size: 30px;;
-   margin-bottom: 20px;
-   font-family: 'Aldrich', sans-serif;
-   width: 400px;
-   text-align: center;
+    font-size: 30px;;
+    margin-bottom: 20px;
+    font-family: 'Aldrich', sans-serif;
+    width: 400px;
+    text-align: center;
 }
 
 .inventory-btn{
-      background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
-      width: 100px;
-      border: none;
-      outline: none;
-      color: #fff;
-      height: 35px;
-      border-radius: 30px;
-      box-shadow: 0px 5px 15px 0px linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
-      margin-left: 150px;
-      cursor: pointer;
+    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    width: 100px;
+    border: none;
+    outline: none;
+    color: #fff;
+    height: 35px;
+    border-radius: 30px;
+    box-shadow: 0px 5px 15px 0px linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    margin-left: 150px;
+    cursor: pointer;
 }
 
 .inventory h1{
-   margin-top: 150px;
-   margin-bottom: 30px;
-   color: #fafafa;
-   text-transform: uppercase;
-   transform: translateY(20%);
-   font-size: 3rem;
-   font-family: 'Nunito', sans-serif;
-   text-align: center;
+    margin-top: 150px;
+    margin-bottom: 30px;
+    color: #fafafa;
+    text-transform: uppercase;
+    transform: translateY(20%);
+    font-size: 3rem;
+    font-family: 'Nunito', sans-serif;
+    text-align: center;
 }
 
 .inventory h3{
-   font-size: 1.85rem;
-   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-   text-align: center;
-   text-transform: uppercase;
-   color: white;
+    font-size: 1.85rem;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+    color: white;
 }
 
 .title-box {
@@ -587,69 +587,111 @@ BOOKING.PHP
 */
 
 .bookingbackground{
-   height: 100%;
-   width: 100%;
-   background-image: url(images/booking.jpg);
-   background-color: #999;
-   background-position: cover;
-   background-size: cover;
-   position: absolute;
+    width: 100%;
+    background-color: #999;
+    background-position: cover;
+    background-size: cover;
+    position: absolute;
 }
 
 .bookingcontainer{
-   width: 60%;
-   margin: 50px auto;
+    width: 60%;
+    margin: 50px auto;
+    height: auto;
 }
 
 .bookingbox{
-   background: #ffff;
-   display: flex;
-   font-size: 1rem;
-   font-family: 'Nunito', sans-serif;
-   text-transform: uppercase;
-   opacity: 80%;
-   font-weight: 600;
-   padding: 40px;
-   text-align: center;
+    background: #fff;
+    font-size: 1rem;
+    font-family: 'Nunito', sans-serif;
+    text-transform: uppercase;
+    opacity: 80%;
+    font-weight: 600;
+    padding: 40px;
+    text-align: center;
+    width: 1000px;
+    margin: auto;
+    margin-bottom: 100px;
 }
 
 
 .bookingcontainer h1{
-   margin-top: 150px;
-   margin-bottom: 30px;
-   width: 100%;
-   max-width: 100%;
-   color: #fafafa;
-   text-transform: uppercase;
-   transform: translateY(20%);
-   font-size: 3rem;
-   font-family: 'Nunito', sans-serif;
-   text-align: center;
+    margin-top: 150px;
+    margin-bottom: 30px;
+    width: 100%;
+    max-width: 100%;
+    color: #fafafa;
+    text-transform: uppercase;
+    transform: translateY(20%);
+    font-size: 3rem;
+    font-family: 'Nunito', sans-serif;
+    text-align: center;
+}
+
+.bookingboxtext div {
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.bookingboxtext div p {
+    float:left;
 }
 
 .input-coloumn{
-   width: 50%;
-   margin-bottom: 30px;
-   float: left;
-   height: 50px;
+    width: 80%;
 }
 
 .bookingbtn{
-   background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
-   width: 100px;
-   border: none;
-   outline: none;
-   color: #fff;
-   height: 35px;
-   border-radius: 30px;
-   margin-top: 20px;
-   box-shadow: 0px 5px 15px 0px linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    width: 100px;
+    border: none;
+    outline: none;
+    color: #fff;
+    height: 35px;
+    border-radius: 30px;
+    margin-top: 20px;
+    box-shadow: 0px 5px 15px 0px linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
 
 }
 
 .bookingbox h3{
-   color: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
-   font-weight: 600;
-   margin-bottom: 30px;
-   text-align: center;
+    color: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    font-weight: 600;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.body-container {
+    width: 1000px;
+    height: 1000px;
+    background-color: rgba(255,255,255,0.6);
+    margin: auto;
+    margin-top: 200px;
+}
+
+.title-container {
+    width: 100%;
+    height: 200px;
+    background-color: rgba(100,100,100,0.6);
+    border-bottom: 6px solid black;
+
+}
+
+.title-container h1 {
+    text-align: center;
+    padding-top: 80px;
+    font-family: 'Aldrich', sans-serif;
+}
+
+table {
+    border: 1px solid black;
+    width: 400px;
+    margin: auto;
+    margin-top: 100px;
+    font-size: 20px;
+}
+
+table th {
+    border: 1px solid black;
+    padding: 15px;
 }
