@@ -6,6 +6,16 @@ if ( isset($_SESSION["message"]) ) {
     echo "<script type='text/javascript'> alert("."'".$_SESSION["message"]."'"."); </script>";
 }
 unset( $_SESSION['message'] );
+
+require "configure.php";
+
+$connection = mysqli_connect(DBHOST, DBUSER, DBPASS, DBNAME);
+
+if ( !$connection )
+{
+  $_SESSION["message"] = "Connection failed!";
+  header("location: login.php");
+}
 ?>
 
 <!DOCTYPE html>
@@ -53,24 +63,69 @@ unset( $_SESSION['message'] );
 
                     <!--first-->
                     <div class="activities-grid-item firstheading">
-                        <h1>Revolutionizing the Way You Travel Forever</h1>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ultricies ligula id aliquet pharetra. Etiam eu dictum mauris. Proin ut elit eget felis efficitur interdum sed sit amet nibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        </p>
+                        <table>
+                            <tr>
+                                <th>Number of customers that use our services</th>
+                            </tr>
+                            <tr>
+                                <?php
+                                $sql = "SELECT COUNT(*) FROM customer";
+                                $query = mysqli_query($connection, $sql) or die(mysqli_error($connection));
+                                while ($row = $query->fetch_assoc())
+                                {
+                                  foreach ($row as $key => $value)
+                                  {
+                                      echo "<td>$value</td>";
+                                  }
+                                }
+
+                                ?>
+                            </tr>
+                        </table>
                     </div>
                     <!--second-->
                     <div class="activities-grid-item secondheading">
-                        <h1>Canada's Most Luxurious & Exclusive Fleet</h1>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ultricies ligula id aliquet pharetra. Etiam eu dictum mauris. Proin ut elit eget felis efficitur interdum sed sit amet nibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        </p>
+                        <table>
+                            <tr>
+                                <th>Number of vehicles in our fleet</th>
+                            </tr>
+                            <tr>
+                                <?php
+                                $sql = "SELECT COUNT(*) FROM vehicle";
+                                $query = mysqli_query($connection, $sql) or die(mysqli_error($connection));
+                                while ($row = $query->fetch_assoc())
+                                {
+                                  foreach ($row as $key => $value)
+                                  {
+                                      echo "<td>$value</td>";
+                                  }
+                                }
+
+                                ?>
+                            </tr>
+                        </table>
                     </div>
                     <!--third-->
                     <div class="activities-grid-item thirdheading">
-                        <h1>Seamless, State of the Art Service</h1>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ultricies ligula id aliquet pharetra. Etiam eu dictum mauris. Proin ut elit eget felis efficitur interdum sed sit amet nibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        </p>
+                        <table>
+                            <tr>
+                                <th>Number of vehicles in our fleet</th>
+                            </tr>
+                            <tr>
+                                <?php
+                                $sql = "SELECT COUNT(*) FROM vehicle";
+                                $query = mysqli_query($connection, $sql) or die(mysqli_error($connection));
+                                while ($row = $query->fetch_assoc())
+                                {
+                                  foreach ($row as $key => $value)
+                                  {
+                                      echo "<td>$value</td>";
+                                  }
+                                }
+
+                                ?>
+                            </tr>
+                        </table>
                     </div>
                 </div>
             </div>
