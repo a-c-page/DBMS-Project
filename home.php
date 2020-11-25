@@ -56,7 +56,7 @@ if ( !$connection )
                     <br></br>
                     <h3>Why Van Gogh Executive Travel?</h3>
                     <br></br>
-                    <h1> Since We Work Towards Turning Your Dreams into Reality </h1>
+                    <h1> FACTS AND FIGURES </h1>
                 </div>
 
                 <div class="activities-grid">
@@ -110,13 +110,11 @@ if ( !$connection )
         <section class="companyservices">
             <div class="container">
                 <div class="mainheading">
-                    <br></br>
-                    <h3>Unique Services Offered by Us</h3>
-                    <br></br>
+                <br></br>
+                        <h3>Price and Mileage</h3>
+                        <br></br>
 
-                    <h1> Striving to set the benchmark in everything
-                        our Company Sets Out to Achieve is a Testament
-                        to Our Examplary Services </h1>
+
                     </div>
                     <div class="activities-grid">
                         <!--first-->
@@ -170,13 +168,11 @@ if ( !$connection )
             <section class="companyservices">
                 <div class="container">
                     <div class="mainheading">
-                        <br></br>
-                        <h3>Unique Services Offered by Us</h3>
+                                
+                    <br></br>
+                        <h3>Our Sales and Fleet</h3>
                         <br></br>
 
-                        <h1> Striving to set the benchmark in everything
-                            our Company Sets Out to Achieve is a Testament
-                            to Our Examplary Services </h1>
                         </div>
                         <div class="activities-grid">
                             <!--first-->
@@ -237,12 +233,10 @@ if ( !$connection )
                     <div class="container">
                         <div class="mainheading">
                             <br></br>
-                            <h3>Unique Services Offered by Us</h3>
+
                             <br></br>
 
-                            <h1> Striving to set the benchmark in everything
-                                our Company Sets Out to Achieve is a Testament
-                                to Our Examplary Services </h1>
+                            <h1> </h1>
                             </div>
                             <div class="activities-grid">
                                 <!--first-->
