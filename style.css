@@ -219,6 +219,11 @@ nav{
     text-align: center;
 }
 
+.activities-grid-item li{
+    font-size: 11pt;
+    font-family: 'Nunito', sans-serif;
+}
+
 
 .activities-grid-item::before{
     content: "";
