@@ -38,11 +38,7 @@ session_destroy();
 
             <form id="login" action="checkLogin.php" class="input-group" method="POST">
                 <input type="text" name="username" class="input-field" placeholder="Username" required>
-                <br></br>
-                <br></br>
                 <input type="password" name="password" class="input-field" placeholder="Password" required>
-                <br></br>
-                <br></br>
                 <button type="submit" name="submit" class="submit-btn">Log In</button>
             </form>
 
@@ -61,6 +57,6 @@ session_destroy();
                 <button type="submit" name="submit" class="submit-btn">Register</button>
             </form>
 
-        </div>
     </div>
+    <script type="text/javascript" src="script.js"></script>
 </body>

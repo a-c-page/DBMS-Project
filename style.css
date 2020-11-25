@@ -277,13 +277,17 @@ LOGIN PAGE
 
 .formbox{
     width: 400px;
-    height: 525px;
+    height: 825px;
     position: relative;
     margin: 10% auto;
     background: #fff;
     padding: 5px;
     opacity: 80%;
     overflow: hidden;
+}
+
+.formbox input {
+    margin-bottom: 30px;
 }
 
 .buttonbox{
@@ -666,46 +670,6 @@ PROFILE.PHP
 
 */
 
-
-
-/*
-.body-container {
-    width: 1000px;
-    height: 1000px;
-    margin: auto;
-    margin-top: 100px;
-}
-
-.title-container {
-    width: 100%;
-    height: 200px;
-}
-
-.title-container h1 {
-    text-align: center;
-    padding-top: 80px;
-    font-family: 'Aldrich', sans-serif;
-    color: white;
-}
-
-.content-container {
-    background-color: rgba(255, 255, 255, 0.7);
-}
-
-table {
-    border: 1px solid black;
-    width: 400px;
-    margin: auto;
-    margin-top: 100px;
-    font-size: 20px;
-}
-
-table th {
-    border: 1px solid black;
-    padding: 15px;
-}
-
-*/
 .profile-bg{
     height: 100%;
     width: 100%;
@@ -716,7 +680,7 @@ table th {
     background-position: cover;
     background-size: cover;
     position: absolute;
-    
+
 }
 
 .title-container{
@@ -734,27 +698,32 @@ table th {
     position: absolute;
     z-index: 2;
     left: 50%;
-    top: 50%;
+    top: 40%;
     transform: translate(-50%,-50%);
     width: 1000px;
-    color: white;
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.5);
     border-collapse: collapse;
     border-spacing: 0;
     border-radius: 12px 12px 12px 12px;
     overflow: hidden;
-    box-shadow: 0 12px 12px rgba(32, 32, 32, 0.3);
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.2);
     height: 400px;
     font-weight: 900;
-    border: 6px solid #fafafa;
 }
 
-#prof-table th{
-    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+#prof-table th, #prof-table td{
+    background-color: rgba(0, 0, 0, 0.5);
     color: #fafafa;
     text-transform: uppercase;
     font-size: 1.5rem;
     padding: 12px 15px;
 }
 
+#prof-table th {
+    border-bottom: 4px solid rgba(255, 255, 255, 0.1);
+    font-size: 1.7rem;
+}
+
+#logout {
+    margin-right: 800px;
+}

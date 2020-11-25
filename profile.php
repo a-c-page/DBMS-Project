@@ -28,7 +28,7 @@ unset($_SESSION['message']);
 
 
     <div class="profile-bg">
-        
+
         <div class="body-container">
             <div class="title-container">
                 <h1>Your Bookings</h1>
@@ -66,13 +66,13 @@ unset($_SESSION['message']);
                         {
                             echo "
                                 <tr>
-                                    <th>".$row['booking_id']."</th>
-                                    <th>".$row['vin']."</th>
-                                    <th>".$row['start_date']."</th>
-                                    <th>".$row['end_date']."</th>
-                                    <th>".$row['total']."</th>
-                                    <th>".$row['payment_type']."</th>
-                                    <th>".$row['card_number']."</th>
+                                    <td>".$row['booking_id']."</td>
+                                    <td>".$row['vin']."</td>
+                                    <td>".$row['start_date']."</td>
+                                    <td>".$row['end_date']."</td>
+                                    <td>".$row['total']."</td>
+                                    <td>".$row['payment_type']."</td>
+                                    <td>".$row['card_number']."</td>
                                 </tr>";
                         }
                     }
@@ -83,6 +83,6 @@ unset($_SESSION['message']);
             </div>
         </div>
 
-    </div>    
+    </div>
     <script type="text/javascript" src="script.js"></script>
 </body>
