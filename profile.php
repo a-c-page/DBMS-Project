@@ -22,16 +22,16 @@ unset($_SESSION['message']);
     <script type="text/javascript" src="script.js"></script>
 </head>
 <!-- BODY -->
-<body style="background-image: url('images/inventory1.jpg');
-background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5))
-background-repeat: no-repeat;
-background-attachment: fixed;">
+<body>
 <!-- Header which contains nav bar and image-->
 <?php include("header.php"); ?>
 
+
+    <div class="profile-bg">
+        
         <div class="body-container">
             <div class="title-container">
-                <h1>PROFILE</h1>
+                <h1>Your Bookings</h1>
             </div>
             <div class="content-container">
                 <table id="prof-table">
@@ -83,5 +83,6 @@ background-attachment: fixed;">
             </div>
         </div>
 
+    </div>    
     <script type="text/javascript" src="script.js"></script>
 </body>
