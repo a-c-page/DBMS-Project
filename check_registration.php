@@ -1,22 +1,24 @@
 <?php
 
-session_start();
+session_start(); // Start the session
 
-require "configure.php";
+require "configure.php"; // Get DB constants that are used to make a connection
 
-$connection = mysqli_connect(DBHOST, DBUSER, DBPASS, DBNAME);
+$connection = mysqli_connect(DBHOST, DBUSER, DBPASS, DBNAME); // Establish a connection
 
-if ( !$connection )
+echo $_POST['submit'];
+
+// Check if the connection failed
+if (!$connection)
 {
-  $_SESSION["message"] = "Connection failed!";
+  $_SESSION["message"] = "Connection failed.";
   header("location: login.php");
 }
-
 else
 {
-  if ( !isset($_POST['submit']) )
+  if (!isset($_POST['submit']))
   {
-    $_SESSION["message"] = "No data found!";
+    $_SESSION["message"] = "Please go login page to register.";
     header("location: login.php");
   }
 
@@ -34,7 +36,7 @@ else
     $postal = mysqli_real_escape_string($connection, $_POST['postal']);
     $password = mysqli_real_escape_string($connection, $_POST['password']);
 
-    $sql = "SELECT * FROM customers WHERE username = '$username'";
+    $sql = "SELECT * FROM customer WHERE username = '$username'";
 
     $query = mysqli_query($connection, $sql);
 
@@ -48,7 +50,7 @@ else
 
     else
     {
-      $sql = "SELECT * FROM customers WHERE email = '$email'";
+      $sql = "SELECT * FROM customer WHERE email = '$email'";
 
       $query = mysqli_query($connection, $sql);
 

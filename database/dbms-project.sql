@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 5.0.3
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3306
--- Generation Time: Nov 25, 2020 at 06:26 PM
--- Server version: 5.7.26
--- PHP Version: 7.2.18
+-- Host: localhost
+-- Generation Time: Nov 25, 2020 at 10:53 PM
+-- Server version: 10.4.14-MariaDB
+-- PHP Version: 7.4.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -28,9 +27,8 @@ SET time_zone = "+00:00";
 -- Table structure for table `booking`
 --
 
-DROP TABLE IF EXISTS `booking`;
-CREATE TABLE IF NOT EXISTS `booking` (
-  `booking_id` int(255) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `booking` (
+  `booking_id` int(255) NOT NULL,
   `customer_id` int(255) NOT NULL,
   `vin` varchar(255) NOT NULL,
   `start_date` date NOT NULL,
@@ -39,9 +37,8 @@ CREATE TABLE IF NOT EXISTS `booking` (
   `payment_type` varchar(255) NOT NULL,
   `card_number` int(255) NOT NULL,
   `expiration_date` date NOT NULL,
-  `cvv` int(255) NOT NULL,
-  PRIMARY KEY (`booking_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+  `cvv` int(255) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `booking`
@@ -50,7 +47,9 @@ CREATE TABLE IF NOT EXISTS `booking` (
 INSERT INTO `booking` (`booking_id`, `customer_id`, `vin`, `start_date`, `end_date`, `total`, `payment_type`, `card_number`, `expiration_date`, `cvv`) VALUES
 (1, 11, '3FAHP0JA9CR100470', '2020-11-01', '2020-11-03', 1200, 'Mastercard', 12345, '2020-11-17', 123),
 (2, 12, 'G3URU3ISIFHRI679232', '2020-11-01', '2020-11-19', 3420, 'Visa', 123445, '1970-01-01', 123),
-(3, 12, 'JTKDE3B73A0347847', '2020-11-12', '2020-11-26', 3975, 'Mastercard', 123345, '2020-11-18', 1234);
+(3, 12, 'JTKDE3B73A0347847', '2020-11-12', '2020-11-26', 3975, 'Mastercard', 123345, '2020-11-18', 1234),
+(4, 12, '3FAHP0JA9CR100470', '2020-11-26', '2020-11-29', 1600, 'Mastercard', 8709890, '2020-11-30', 908),
+(5, 13, 'WBAVC53598FZ90864', '2020-11-20', '2020-11-30', 3025, 'Mastercard', 211131412, '2020-11-30', 213);
 
 -- --------------------------------------------------------
 
@@ -58,16 +57,14 @@ INSERT INTO `booking` (`booking_id`, `customer_id`, `vin`, `start_date`, `end_da
 -- Table structure for table `contact`
 --
 
-DROP TABLE IF EXISTS `contact`;
-CREATE TABLE IF NOT EXISTS `contact` (
-  `id` int(255) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `contact` (
+  `id` int(255) NOT NULL,
   `firstname` varchar(255) NOT NULL,
   `lastname` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `phone` varchar(255) NOT NULL,
-  `feedback` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+  `feedback` varchar(255) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `contact`
@@ -83,9 +80,8 @@ INSERT INTO `contact` (`id`, `firstname`, `lastname`, `email`, `phone`, `feedbac
 -- Table structure for table `customer`
 --
 
-DROP TABLE IF EXISTS `customer`;
-CREATE TABLE IF NOT EXISTS `customer` (
-  `customer_id` int(255) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `customer` (
+  `customer_id` int(255) NOT NULL,
   `license_number` varchar(255) NOT NULL,
   `first_name` varchar(255) NOT NULL,
   `last_name` varchar(255) NOT NULL,
@@ -96,9 +92,8 @@ CREATE TABLE IF NOT EXISTS `customer` (
   `unit` int(255) NOT NULL,
   `phone_number` varchar(255) NOT NULL,
   `username` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  PRIMARY KEY (`customer_id`,`license_number`)
-) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+  `password` varchar(255) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `customer`
@@ -106,43 +101,8 @@ CREATE TABLE IF NOT EXISTS `customer` (
 
 INSERT INTO `customer` (`customer_id`, `license_number`, `first_name`, `last_name`, `email`, `street`, `city`, `postal`, `unit`, `phone_number`, `username`, `password`) VALUES
 (12, '123445', 'Mitch', 'Hicks', 'm@s.com', 'Bot St', 'Uxbridge', 'L2VG5H', 11, '987654321', 'msens', 'test'),
-(11, 'idk123', 'Austin', 'Page', 'a@p.com', 'Street', 'City', 'L1B3VG', 11, '1234567890', 'apage', 'test');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `employee`
---
-
-DROP TABLE IF EXISTS `employee`;
-CREATE TABLE IF NOT EXISTS `employee` (
-  `employeeID` int(11) NOT NULL,
-  `SSN` int(11) NOT NULL,
-  `firstName` varchar(45) NOT NULL,
-  `lastName` varchar(45) NOT NULL,
-  `City` varchar(45) NOT NULL,
-  `Street` varchar(45) NOT NULL,
-  `Unit` int(11) NOT NULL,
-  `Postal` varchar(45) NOT NULL,
-  `Email` varchar(45) NOT NULL,
-  PRIMARY KEY (`employeeID`,`SSN`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `employee`
---
-
-INSERT INTO `employee` (`employeeID`, `SSN`, `firstName`, `lastName`, `City`, `Street`, `Unit`, `Postal`, `Email`) VALUES
-(1, 123456789, 'Austin', 'Page', 'Toronto', 'Bridal Path', 23, 'M1C4G7', 'a@p.com'),
-(2, 234567891, 'Taha', 'Hashmat', 'Oshawa', 'McGreggor Crescent', 19, 'L2G4G5', 't@h.com'),
-(3, 384828485, 'Mitchell', 'Hicks', 'Uxbridge', 'Holloway Street', 43, 'N3C4C6', 'm@h.com'),
-(4, 459683019, 'Yakho', 'Sivapur', 'Scarborough', 'Bot Road', 73, 'H3D8L4', 'y@s.com'),
-(5, 547382910, 'Raveenth', 'Mahas', 'York', 'Porier Street', 442, 'K3M3K6', 'r@m.com'),
-(6, 673929284, 'Sabesan', 'Sivakum', 'Pickering', 'Jones Boulevard', 32, 'G3M4H9', 's@s.com'),
-(7, 728839120, 'Owais', 'Quadri', 'Oshawa', 'Khabib Circle', 53, 'K873G8', 'o@q.com'),
-(8, 828382839, 'Aayush', 'Bajaj', 'Whitby', 'Ruiz Drive', 462, 'M4D8R4', 'a@b.com'),
-(9, 938829293, 'Donald', 'Trump', 'York', 'Jane & Finch', 24, 'K2H8D8', 'd@t.com'),
-(10, 104893929, 'Joe', 'Biden', 'Ottawa', 'Presidential Avenue', 1, 'A3A3B9', 'j@b.com');
+(11, 'idk123', 'Austin', 'Page', 'a@p.com', 'Street', 'City', 'L1B3VG', 11, '1234567890', 'apage', 'test'),
+(13, '0292912919', 'Yakh', 'Siva', 'y@s.com', 'Street', 'Borough', 'L1L0J9', 12, '2192919139', 'ysiva', 'test');
 
 -- --------------------------------------------------------
 
@@ -150,8 +110,7 @@ INSERT INTO `employee` (`employeeID`, `SSN`, `firstName`, `lastName`, `City`, `S
 -- Table structure for table `vehicle`
 --
 
-DROP TABLE IF EXISTS `vehicle`;
-CREATE TABLE IF NOT EXISTS `vehicle` (
+CREATE TABLE `vehicle` (
   `VIN` varchar(45) NOT NULL,
   `plateNumber` varchar(45) NOT NULL,
   `Colour` varchar(45) NOT NULL,
@@ -161,8 +120,7 @@ CREATE TABLE IF NOT EXISTS `vehicle` (
   `Mileage` int(11) NOT NULL,
   `Status` varchar(45) NOT NULL,
   `Photo` varchar(255) NOT NULL,
-  `Price` decimal(65,0) NOT NULL,
-  PRIMARY KEY (`VIN`,`plateNumber`)
+  `Price` decimal(65,0) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
@@ -181,6 +139,56 @@ INSERT INTO `vehicle` (`VIN`, `plateNumber`, `Colour`, `Year`, `Make`, `Model`, 
 ('IEE433JFJDJEJ458922', 'QIWL920', 'Yellow', 2019, 'Lamborghini', 'Urus', 982, 'Available', 'yurus20.jpg', '250'),
 ('HSUW20DHJW348910', 'HWQL201', 'Black', 2018, 'Rolls Royce', 'Wraith', 3485, 'Unavailable', 'bwraith18.jpg', '350'),
 ('GHIWDXGHWEDGHJEDGH', 'JKDJKEDHJKED', 'Black', 1990, 'Honda', 'Civic', 999999, 'Unavailable', 'honda.jpg', '0');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `booking`
+--
+ALTER TABLE `booking`
+  ADD PRIMARY KEY (`booking_id`);
+
+--
+-- Indexes for table `contact`
+--
+ALTER TABLE `contact`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `customer`
+--
+ALTER TABLE `customer`
+  ADD PRIMARY KEY (`customer_id`,`license_number`);
+
+--
+-- Indexes for table `vehicle`
+--
+ALTER TABLE `vehicle`
+  ADD PRIMARY KEY (`VIN`,`plateNumber`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `booking`
+--
+ALTER TABLE `booking`
+  MODIFY `booking_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `contact`
+--
+ALTER TABLE `contact`
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `customer`
+--
+ALTER TABLE `customer`
+  MODIFY `customer_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

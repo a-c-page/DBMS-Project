@@ -74,6 +74,16 @@ nav{
     cursor: pointer;
 }
 
+#weather {
+    background-color: rgba(255, 255, 255, .5);
+    border: 2px solid black;
+    margin-right: 15px;
+}
+
+#weather img {
+    float: left;
+}
+
 .close i{
     color: #fafafa;
 }
@@ -168,7 +178,6 @@ nav{
 }
 
 
-
 .companyinfo{
     padding: 0;
 }
@@ -197,7 +206,7 @@ nav{
 }
 
 .activities-grid-item{
-    height: 50rem;
+    height:60rem;
     padding: 2rem;
     width: 30rem;
     color: #fafafa;
@@ -209,6 +218,7 @@ nav{
     z-index: 1;
     text-align: center;
 }
+
 
 .activities-grid-item::before{
     content: "";

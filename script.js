@@ -67,3 +67,18 @@ function updateTotal() {
     }
 
 }
+
+function weather() {
+    var city = 'Toronto';
+    var key = '612adfd51440653c75c3da12cf367a65';
+
+    fetch('http://api.openweathermap.org/data/2.5/weather?q=Toronto&units=metric&APPID=612adfd51440653c75c3da12cf367a65')
+        .then(response => response.json())
+        .then(data => {
+            var temp = data['main']['temp'];
+            var desc = data['weather'][0]['description'];
+            var icon = data['weather'][0]['icon'];
+            var pic = 'http://openweathermap.org/img/wn/' + icon + '@2x.png';
+            document.getElementById('weather').innerHTML = '<img src="'+ pic +'" style="width: 40px;">Toronto\'s Weather: ' + temp + '&deg;C';
+        })
+}

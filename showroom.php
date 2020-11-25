@@ -58,20 +58,23 @@ background-attachment: fixed;">
 
         while ($row = $query->fetch_assoc())
         {
-            echo "
-            <div class='car-box'>
-            <img src='images/inventory/". $row['Photo']."' class='inventory-photo'>
+            if ($row['Status'] == 'Available') {
+                echo "
+                <div class='car-box'>
+                <img src='images/inventory/". $row['Photo']."' class='inventory-photo'>
 
-            <div class='inventory-text'>
-            <h1>".$row['Year']." ".$row['Make']." ".$row['Model']."</h1>
-            <p>Colour: ".$row['Colour']."</p>
-            <p>Mileage: ".$row['Mileage']."km</p>
-            <p>Price: $".$row['Price']." per 24 Hours</p>
-            <p>Status: ".$row['Status']."</p>
-            <button name='submit' class='inventory-btn' onclick=\"bookNow('".$row['Year']."','".$row['Make']."','".$row['Model']."','".$row['VIN']."','".$row['Price']."')\">Book Now</button>
-            </div>
+                <div class='inventory-text'>
+                <h1>".$row['Year']." ".$row['Make']." ".$row['Model']."</h1>
+                <p>Colour: ".$row['Colour']."</p>
+                <p>Mileage: ".$row['Mileage']."km</p>
+                <p>Price: $".$row['Price']." per 24 Hours</p>
+                <p>Status: ".$row['Status']."</p>
+                <button name='submit' class='inventory-btn' onclick=\"bookNow('".$row['Year']."','".$row['Make']."','".$row['Model']."','".$row['VIN']."','".$row['Price']."')\">Book Now</button>
+                </div>
 
-            </div>";
+                </div>";
+            }
+
         }
 
         ?>

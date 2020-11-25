@@ -13,8 +13,8 @@ $connection = mysqli_connect(DBHOST, DBUSER, DBPASS, DBNAME);
 
 if ( !$connection )
 {
-  $_SESSION["message"] = "Connection failed!";
-  header("location: login.php");
+    $_SESSION["message"] = "Connection failed!";
+    header("location: login.php");
 }
 ?>
 
@@ -63,73 +63,50 @@ if ( !$connection )
 
                     <!--first-->
                     <div class="activities-grid-item firstheading">
-                        <table>
-                            <tr>
-                                <th>Number of customers that use our services</th>
-                            </tr>
-                            <tr>
-                                <?php
-                                $sql = "SELECT COUNT(*) FROM customer";
-                                $query = mysqli_query($connection, $sql) or die(mysqli_error($connection));
-                                while ($row = $query->fetch_assoc())
-                                {
-                                  foreach ($row as $key => $value)
-                                  {
-                                      echo "<td>$value</td>";
-                                  }
-                                }
-
-                                ?>
-                            </tr>
-                        </table>
+                        <h1>Number of customers that use our services</h1>
+                        <ul>
+                            <?php
+                            $sql = "SELECT COUNT(*) FROM customer";
+                            $query = mysqli_query($connection, $sql);
+                            while ($row = $query->fetch_assoc())
+                            {
+                                foreach ($row as $key => $value) { echo "<li>$value</li>"; }
+                            }
+                            ?>
+                        </ul>
                     </div>
                     <!--second-->
                     <div class="activities-grid-item secondheading">
-                        <table>
-                            <tr>
-                                <th>Number of vehicles in our fleet</th>
-                            </tr>
-                            <tr>
-                                <?php
-                                $sql = "SELECT COUNT(*) FROM vehicle";
-                                $query = mysqli_query($connection, $sql) or die(mysqli_error($connection));
-                                while ($row = $query->fetch_assoc())
-                                {
-                                  foreach ($row as $key => $value)
-                                  {
-                                      echo "<td>$value</td>";
-                                  }
-                                }
-
-                                ?>
-                            </tr>
-                        </table>
+                        <h1>The Total Number of Bookings Our Company has Made:</h1>
+                        <ul>
+                            <?php
+                            $sql = "SELECT COUNT(*) FROM booking";
+                            $query = mysqli_query($connection, $sql);
+                            while ($row = $query->fetch_assoc())
+                            {
+                                foreach ($row as $key => $value) { echo "<li>$value</li>"; }
+                            }
+                            ?>
+                        </ul>
                     </div>
                     <!--third-->
                     <div class="activities-grid-item thirdheading">
-                        <table>
-                            <tr>
-                                <th>Number of vehicles in our fleet</th>
-                            </tr>
-                            <tr>
-                                <?php
-                                $sql = "SELECT COUNT(*) FROM vehicle";
-                                $query = mysqli_query($connection, $sql) or die(mysqli_error($connection));
-                                while ($row = $query->fetch_assoc())
-                                {
-                                  foreach ($row as $key => $value)
-                                  {
-                                      echo "<td>$value</td>";
-                                  }
-                                }
-
-                                ?>
-                            </tr>
-                        </table>
+                        <h1>Total Revenue from Our Sales</h1>
+                        <ul>
+                            <?php
+                            $sql = "SELECT SUM(total) FROM booking";
+                            $query = mysqli_query($connection, $sql);
+                            while ($row = $query->fetch_assoc())
+                            {
+                                foreach ($row as $key => $value) { echo "<li>$value</li>"; }
+                            }
+                            ?>
+                        </ul>
                     </div>
                 </div>
             </div>
         </section>
+
         <section class="companyservices">
             <div class="container">
                 <div class="mainheading">
@@ -144,20 +121,143 @@ if ( !$connection )
                     <div class="activities-grid">
                         <!--first-->
                         <div class="activities-grid-item fourthheading">
-                            <h1>Apply online, get approved in a few hours with
-                                Your vehicle ready for you on arrival.</h1>
+                            <h1>We strive on delivering the most pleasant experience to our customers, which includes providing them with the
+                                lastest of super cars on the market. Our 2020 lineup includes:</h1>
+                            <ul>
+                                <?php
+                                $sql = "SELECT Make, Model FROM vehicle WHERE Year = ANY (SELECT Year
+                                        FROM vehicle Where Year = 2020 ) GROUP BY Make";
+                                $query = mysqli_query($connection, $sql);
+                                while ($row = $query->fetch_assoc())
+                                {
+                                    foreach ($row as $key => $value) { echo "<li>$value</li>"; }
+                                }
+                                ?>
+                            </ul>
+                        </div>
+                        <!--second-->
+                        <div class="activities-grid-item fifthheading">
+                            <h1>Our Economical Rental Options that fall undernathe the Average rental price include:</h1>
+                            <ul>
+                                <?php
+                                $sql = "SELECT Make, Model, price FROM vehicle WHERE price<= (SELECT AVG(price) FROM vehicle)";
+                                $query = mysqli_query($connection, $sql);
+                                while ($row = $query->fetch_assoc())
+                                {
+                                    foreach ($row as $key => $value) { echo "<li>$value</li>"; }
+                                }
+                                ?>
+                            </ul>
+                        </div>
+                        <!--third-->
+                        <div class="activities-grid-item sixthheading">
+                            <h1>The Number of Vehicles in Our Fleet is:</h1>
+                            <ul>
+                                <?php
+                                $sql = "SELECT COUNT(*) FROM vehicle";
+                                $query = mysqli_query($connection, $sql);
+                                while ($row = $query->fetch_assoc())
+                                {
+                                    foreach ($row as $key => $value) { echo "<li>$value</li>"; }
+                                }
+                                ?>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="companyservices">
+                <div class="container">
+                    <div class="mainheading">
+                        <br></br>
+                        <h3>Unique Services Offered by Us</h3>
+                        <br></br>
+
+                        <h1> Striving to set the benchmark in everything
+                            our Company Sets Out to Achieve is a Testament
+                            to Our Examplary Services </h1>
+                        </div>
+                        <div class="activities-grid">
+                            <!--first-->
+                            <div class="activities-grid-item fourthheading">
+                                <h1>The number of times the most Luxurious Vehicle in our fleet, The Bugatti Chiron, has been booked by Customers is:</h1>
+                                <ul>
+                                    <?php
+                                    $sql = "SELECT COUNT(booking_id) FROM booking JOIN customer ON customer.customer_id = booking.customer_id JOIN vehicle ON booking.vin = vehicle.VIN WHERE vehicle.Make = 'Bugatti'";
+                                    $query = mysqli_query($connection, $sql);
+                                    while ($row = $query->fetch_assoc())
+                                    {
+                                        foreach ($row as $key => $value) { echo "<li>$value</li>"; }
+                                    }
+                                    ?>
+                                </ul>
                             </div>
                             <!--second-->
                             <div class="activities-grid-item fifthheading">
-                                <h1> Insight with Interactive Spec Sheets</h1>
+                                <h1>To aid you in better selecting you choice of vehicle we have ordered them in terms of increasing mileage</h1>
+                                <ul>
+                                    <?php
+                                    $sql = "SELECT Make, Model, Mileage FROM vehicle WHERE Mileage < ( SELECT AVG(Mileage) FROM vehicle WHERE vehicle.Make = Make) ORDER BY Mileage";
+                                    $query = mysqli_query($connection, $sql);
+                                    while ($row = $query->fetch_assoc())
+                                    {
+                                        foreach ($row as $key => $value) { echo "<li>$value</li>"; }
+                                    }
+                                    ?>
+                                </ul>
                             </div>
                             <!--third-->
                             <div class="activities-grid-item sixthheading">
-                                <h1>Welcome Addition of Electric Vehicles</h1>
+
+                                <h1>The total price for the all the vehicles that are currently booked:</h1>
+                                <ul>
+                                    <?php
+                                    $sql = "SELECT vehicle.Make, vehicle.Model, booking.total FROM vehicle LEFT OUTER JOIN booking ON vehicle.VIN=booking.vin UNION SELECT vehicle.Make, vehicle.Model, booking.total FROM vehicle RIGHT OUTER JOIN booking ON vehicle.VIN = booking.vin";
+                                    $query = mysqli_query($connection, $sql);
+                                    while ($row = $query->fetch_assoc())
+                                    {
+                                        foreach ($row as $key => $value) { echo "<li>$value</li>"; }
+                                    }
+                                    ?>
+                                </ul>
                             </div>
                         </div>
                     </div>
                 </section>
-            </main>
-        </body>
-</html>
+
+
+                <section class="companyservices">
+                    <div class="container">
+                        <div class="mainheading">
+                            <br></br>
+                            <h3>Unique Services Offered by Us</h3>
+                            <br></br>
+
+                            <h1> Striving to set the benchmark in everything
+                                our Company Sets Out to Achieve is a Testament
+                                to Our Examplary Services </h1>
+                            </div>
+                            <div class="activities-grid">
+                                <!--first-->
+
+                                <!--second-->
+                                <div class="activities-grid-item fifthheading">
+                                    <h1>The Lamborghinis in are fleet are:</h1>
+                                    <ul>
+                                        <?php
+                                        $sql = "SELECT Make, Model, Year FROM vehicle WHERE Make = 'Lamborghini'";
+                                        $query = mysqli_query($connection, $sql);
+                                        while ($row = $query->fetch_assoc())
+                                        {
+                                            foreach ($row as $key => $value) { echo "<li>$value</li>"; }
+                                        }
+                                        ?>
+                                    </ul>
+                                </div>
+
+                            </section>
+
+                        </main>
+                    </body>
+                    </html>

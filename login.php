@@ -36,13 +36,13 @@ session_destroy();
                 <button class="toggle-btn" onclick="register()">Register</button>
             </div>
 
-            <form id="login" action="checkLogin.php" class="input-group" method="POST">
+            <form id="login" action="check_login.php" class="input-group" method="POST">
                 <input type="text" name="username" class="input-field" placeholder="Username" required>
                 <input type="password" name="password" class="input-field" placeholder="Password" required>
                 <button type="submit" name="submit" class="submit-btn">Log In</button>
             </form>
 
-            <form id="register" action="checkRegistration.php" class="input-group" method="POST">
+            <form id="register" action="check_registration.php" class="input-group" method="POST">
                 <input type="text" name="first_name" class="input-field" placeholder="First Name" required pattern="[A-Za-z]+" title="First name can only contain letters.">
                 <input type="text" name="last_name" class="input-field" placeholder="Last Name" required pattern="[A-Za-z]+" title="Last name can only contain letters.">
                 <input type="text" name="username" class="input-field" placeholder="Username" required pattern="[A-Za-z0-9]{3,}" title="Username can only contain leters and numbers, and must be at least 3 characters long.">

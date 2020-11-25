@@ -3,9 +3,10 @@
     <div class="container">
         <nav>
             <!-- profile picture -->
-            <img src="images/profile.png" class="profile" onclick="profileIcon('<?php if (isset($_SESSION['username'])) {echo $_SESSION['username'];} else {echo "";} ?>')">
+            <img onload="weather()" src="images/profile.png" class="profile" onclick="profileIcon('<?php if (isset($_SESSION['username'])) {echo $_SESSION['username'];} else {echo "";} ?>')">
             <!-- logout picture -->
             <a href="login.php"><img src="images/logout_icon.png" id="logout" class="profile"></a>
+            <div id="weather" onload="weather()"> </div>
             <!-- menu icon -->
             <div class="menu-icons open" onclick="sidebar()">
                 <i class="icon ion-md-menu"></i>
