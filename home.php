@@ -130,7 +130,7 @@ if ( !$connection )
                                 $query = mysqli_query($connection, $sql);
                                 while ($row = $query->fetch_assoc())
                                 {
-                                    foreach ($row as $key => $value) { echo "<li>$value</li>"; }
+                                    echo "<li>".$row['Make']." ".$row['Model']."</li>";
                                 }
                                 ?>
                             </ul>
@@ -144,7 +144,7 @@ if ( !$connection )
                                 $query = mysqli_query($connection, $sql);
                                 while ($row = $query->fetch_assoc())
                                 {
-                                    foreach ($row as $key => $value) { echo "<li>$value</li>"; }
+                                    echo "<li>".$row['Make']." ".$row['Model']."</li>";
                                 }
                                 ?>
                             </ul>
@@ -202,7 +202,7 @@ if ( !$connection )
                                     $query = mysqli_query($connection, $sql);
                                     while ($row = $query->fetch_assoc())
                                     {
-                                        foreach ($row as $key => $value) { echo "<li>$value</li>"; }
+                                        echo "<li>".$row['Make']." ".$row['Model'].": ".$row['Mileage']."km</li>";
                                     }
                                     ?>
                                 </ul>
@@ -217,7 +217,13 @@ if ( !$connection )
                                     $query = mysqli_query($connection, $sql);
                                     while ($row = $query->fetch_assoc())
                                     {
-                                        foreach ($row as $key => $value) { echo "<li>$value</li>"; }
+                                        if ($row['total'] < 1){
+                                            echo "<li>".$row['Make']." ".$row['Model'].": $0</li>";
+                                        }
+                                        else
+                                        {
+                                            echo "<li>".$row['Make']." ".$row['Model'].": $".$row['total']."</li>";
+                                        }
                                     }
                                     ?>
                                 </ul>
@@ -250,7 +256,7 @@ if ( !$connection )
                                         $query = mysqli_query($connection, $sql);
                                         while ($row = $query->fetch_assoc())
                                         {
-                                            foreach ($row as $key => $value) { echo "<li>$value</li>"; }
+                                            echo "<li>".$row['Year']." ".$row['Make']." ".$row['Model']."</li>";
                                         }
                                         ?>
                                     </ul>
