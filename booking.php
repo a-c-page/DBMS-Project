@@ -24,7 +24,10 @@ if ( !isset( $_SESSION['username']) )
     <script type="text/javascript" src="script.js"></script>
 </head>
 <!-- BODY -->
-<body>
+<body style="background-image: url('images/booking.jpg');
+background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5))
+background-repeat: no-repeat;
+background-attachment: fixed;">
     <!-- Header which contains nav bar and image-->
     <?php include("header.php"); ?>
 
@@ -36,7 +39,7 @@ if ( !isset( $_SESSION['username']) )
 
                 <div class="bookingboxtext">
                     <form onchange="updateTotal()" action="send_booking.php" method="post">
-                        <h3>TAHA IS GAY!</h3>
+                        <h3>Personal Information</h3>
                         <div> <p>First Name</p> <input type="text" name="first_name" class="input-coloumn" readonly value=<?php echo "'".$_SESSION['first_name']."'"; ?>> </div>
                         <div> <p>Last Name</p> <input type="text" name="last_name" class="input-coloumn" readonly value=<?php echo "'".$_SESSION['last_name']."'"; ?>> </div>
                         <div> <p>Email</p> <input type="email" name="email" class="input-coloumn" readonly value=<?php echo "'".$_SESSION['email']."'"; ?>> </div>
@@ -65,7 +68,7 @@ if ( !isset( $_SESSION['username']) )
                         <br>
                         <hr>
                         <br>
-                        <h3>TAHA IS GAY! #2</h3>
+                        <h3>Payment</h3>
 
                         <div>
                             <p>Payment Type</p>
@@ -78,7 +81,7 @@ if ( !isset( $_SESSION['username']) )
                         <div> <p>Expiration Date</p> <input type="date" name="expiration_date" class="input-coloumn" > </div>
                         <div> <p>CVV</p> <input type="text" name="cvv" class="input-coloumn" > </div>
                         <div> <p>Total</p> <input type="text" name="total" id='total-box' class="input-coloumn" value="$0" readonly> </div>
-                        <button class="bookingbtn" type="submit">SUBMIT</button>
+                        <button class="bookingbtn" type="submit">BOOK</button>
                     </form>
                 </div>
             </div>
